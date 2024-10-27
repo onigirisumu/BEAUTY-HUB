@@ -1,0 +1,782 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+body {
+    font-family: 'Hind', sans-serif;
+    background: #fff;
+    color: #4d5974;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vh;
+}
+
+header {
+    min-height: 30px;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.night-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+/* Стили для иконок */
+#themeToggle {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 a {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: black
+}
+
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+
+#loginModal {
+    font-family: 'Poppins', sans-serif;
+}
+
+#loginModal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#loginModal .modal-header {
+    background-color: #ff6f91;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    padding: 15px;
+}
+
+#loginModal .modal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#loginModal .modal-body {
+    background-color: #fff;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+#loginModal .modal-body p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+#loginModal .form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+#loginModal .form-control:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+#loginModal .form-check-label {
+    color: #555;
+}
+
+#loginModal .btn {
+    background-color: #ff6f91;
+    color: white;
+    border-radius: 6px;
+    padding: 12px 20px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+#loginModal .btn:hover {
+    background-color: #ff1493;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#loginModal .close {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#loginModal .close:hover {
+    color: #ff1493;
+}
+
+
+.carousel {
+    margin-top: 50px;
+}
+
+.carousel-inner img {
+    width: 800px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    bottom: 20px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+}
+
+.welcome {
+    margin: 80px 0;
+}
+
+.welcome h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.welcome p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Theme switch styles */
+.theme-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    align-items: center;
+    text-align: right;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-text {
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+/* Night theme */
+body.night-theme {
+    background-color: #031f3b;
+    color: #ECF0F1;
+}
+
+body.night-theme p {
+    color: #BDC3C7;
+}
+
+body.night-theme .newProducts-section .card, body.night-theme .tutorial-section .tutorial-video,  body.night-theme .customize-section{
+    background-color: #07335f;
+    color: #ECF0F1;
+}
+
+body.night-theme .customize-section h2{
+    color: #ECF0F1;
+}
+
+body.night-theme #join-us{
+    background-color: #08667be6;
+}
+
+
+
+
+
+
+/* Section Styling */
+.newProducts-section {
+    margin-bottom: 80px;
+}
+
+.newProducts-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.newProducts-section p {
+    text-align: left;
+}
+
+/* Card Styling */
+.card {
+    width: 100%;
+    height: 700px; /* Allow the height to adjust dynamically */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, height 0.4s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styling */
+.card-img-top {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Title and Text */
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1rem;
+    text-align: justify;
+    transition: max-height 0.4s ease-in-out;
+    max-height: 7.5em; /* Default truncated height */
+    overflow: hidden;
+}
+
+.card.expanded .card-text {
+    max-height: 10em; /* Expand height on read more */
+}
+
+/* Rating Stars Styling */
+.rating {
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+
+.selected {
+    color: #FFD700;
+}
+
+.output {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+button {
+    background-color: #81beff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Read More/Read Less Styling */
+#more1, #more2, #more3 {
+    display: none;
+}
+
+
+
+
+
+.tutorial-section {
+    margin-bottom: 80px;
+}
+
+.tutorial-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tutorial-section p {
+    margin: 20px auto;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 1200px;
+    text-indent: 30px;
+}
+
+.tutorial-video {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 1200px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tutorial-video:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tutorial-video img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.tutorial-video iframe {
+    width: 70%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.tutorial-video h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.embed-responsive {
+    margin: 0 auto;
+}
+
+.customize-section {
+    text-align: center;
+    margin: 40px 100px;
+    background-color: #badfe4; /* Light contrast background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.customize-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.customize-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#changeColorBtn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #4161ca;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#changeColorBtn:hover {
+    background-color: #130fe5;
+    transform: scale(1.05);
+}
+
+
+.faq-section {
+    margin: auto;
+    padding: 4rem;
+    width: 80rem;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #7288a2;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+    cursor: pointer;
+    color: #03b5d2;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+    cursor: pointer;
+    color: #03b5d2;
+    border: 1px solid #03b5d2;
+}
+
+.accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+
+.accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+.accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+    color: #03b5d2;
+}
+
+.accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+}
+
+.accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .faq-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .accordion button {
+        padding: 0.8em 0;
+        font-size: 1rem;
+    }
+
+    .accordion .accordion-content p {
+        font-size: 0.9rem;
+        margin: 1em 0;
+    }
+
+    .accordion button .icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .accordion button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        transform: translateY(-50%);
+    }
+    
+    .accordion button .icon::before {
+        content: '';
+        position: absolute;
+        background: currentColor;
+        width: 2px;
+        height: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .accordion button .icon::after {
+        content: '';
+        position: absolute;
+        background: currentColor;
+        width: 12px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .accordion button[aria-expanded='true'] .icon::before {
+        display: none;
+    }
+    
+    .accordion button[aria-expanded='true'] .icon::after {
+        width: 12px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 1rem;
+    }
+
+    .faq-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .accordion button {
+        padding: 0.5em 0;
+        font-size: 0.9rem;
+    }
+
+    .accordion .accordion-content p {
+        font-size: 0.85rem;
+    }
+}
+
+#join-us {
+    margin-top: 50px;
+    padding: 40px;
+    background-color: #e0f7fa;
+}
+
+#join-us h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#join-us p {
+    font-size: 1.2rem;
+    padding: 10px 100px;
+    margin: 10px 100px;
+}
+
+#join-us .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .navbar-nav .nav-item .nav-link {
+        font-size: 1rem;
+    }
+
+    .carousel-inner img {
+        height: 400px;
+    }
+
+    .welcome, .tutorial-section{
+        margin : 20px;
+        padding : 10px;
+    }
+
+    .welcome h2, .newProducts-section h2, .tutorial-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .welcome p, .newProducts-section p, .tutorial-section p{
+        font-size: 1rem;
+    }
+
+    .card{
+        margin: 10px 60px;
+        width: 80%;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .tutorial-video h3 {
+        font-size: 1.4rem;
+    }
+
+    #join-us p{
+        margin: 10px 0;
+        padding: 0px;
+    }
+
+    #join-us h2 {
+        font-size: 1.5rem;
+    }
+
+    #join-us p, #join-us .btn {
+        font-size: 1rem;
+    }
+}

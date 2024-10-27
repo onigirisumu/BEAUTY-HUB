@@ -1,0 +1,539 @@
+main {
+    padding-top: 70px; 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 700;
+    color: #333;
+}
+header {
+    min-height: 30px;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 a {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+
+#loginModal {
+    font-family: 'Poppins', sans-serif;
+}
+
+#loginModal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#loginModal .modal-header {
+    background-color: #ff6f91;
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    padding: 15px;
+}
+
+#loginModal .modal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#loginModal .modal-body {
+    background-color: #fff;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+#loginModal .modal-body p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+#loginModal .form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+#loginModal .form-control:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+#loginModal .form-check-label {
+    color: #555;
+}
+
+#loginModal .btn {
+    background-color: #ff6f91;
+    color: white;
+    border-radius: 6px;
+    padding: 12px 20px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+#loginModal .btn:hover {
+    background-color: #ff1493;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#loginModal .close {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#loginModal .close:hover {
+    color: #ff1493;
+}
+
+
+.site-title {
+    font-size: 2.5rem;
+    color: #1a1117;
+}
+
+
+.contact-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-heading {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #83135f;
+}
+
+.blockquote {
+    color: #ca5093; 
+    font-style: italic;
+}
+
+.blockquote-footer {
+    color: #ca5093; 
+    font-size: 0.9rem; 
+}
+
+.star {
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+.intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-title {
+    color: white; 
+    font-size: 2rem; 
+}
+
+.card-text {
+    color: white; 
+    font-size: 1.2rem; 
+}
+
+
+.contact-info {
+    max-width: 1500px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    font-style: italic;
+    margin-bottom: 70px;
+    font-size: 1.3rem;
+    color: #330026;
+}
+
+.branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.branch-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.branch-image {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+
+
+.branch-details {
+    text-align: center;
+}
+
+.branch-details h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.branch-details p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-form-section {
+    background-color: #fff;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 1500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.accordion .card-header {
+    background-color: #83135f;
+    color: white;
+}
+
+.accordion .btn-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.form-container {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.success-popup {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 9999;
+}
+
+.success-container h3 {
+    margin-bottom: 10px;
+}
+
+.success-close-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+
+.success-close-btn:hover {
+    color: red;
+}
+
+
+.form-label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.form-input, .form-textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-radio {
+    margin-right: 10px;
+}
+
+.radio-label {
+    font-size: 1rem;
+    color: #666;
+}
+
+button.btn {
+    background-color: #e4acd2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+button.btn:hover {
+    background-color: #b31d85; 
+}
+.animate {
+    transition: transform 0.3s ease;
+}
+.animate:hover {
+    transform: scale(1.1);
+}
+
+
+
+.footer-section {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .branch {
+        flex-direction: column;
+    }
+
+    .branch-image-container {
+        width: 150px;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+/* Theme switch styles */
+.theme-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    align-items: center;
+    text-align: right;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-text {
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+
+
+/* Night theme */
+html .night-theme{
+    background-color: #031f3b !important;
+}
+
+
+body.night-theme .container, body .night-theme{
+    background-color: #031f3b;
+    color: #ECF0F1;
+}
+
+body.night-theme p {
+    color: #ECF0F1;
+}
+
+body.night-theme .card,  body.night-theme .contact-form-section{
+    background-color: #07335f;
+    color: #ECF0F1;
+}
+
+.night-theme h1, .night-theme h2, .night-theme h3,
+.night-theme p, .night-theme .branch-details {
+    color: #ECF0F1;
+}
+.night-theme .contact-info,
+.night-theme .contact-form-section,
+.night-theme .branch-image-container {
+    background-color: #031f3b;
+    border: 1px solid rgb(222, 219, 219);
+}
+.night-theme .branch-details h4 {
+    margin:0;
+    font-size: 1.2rem;
+    color: #ECF0F1;
+}
+
+
+
+.night-theme .card-title,
+.night-theme .card-text,
+.night-theme .blockquote {
+    color: #ECF0F1;
+}
+
+.night-theme .card-header {
+    background-color:#1a1a2e;
+    color: #ECF0F1;
+}
+
+.night-theme .blockquote-footer {
+    color: #ECF0F1;
+}
+
+
+.night-theme .branch-details,
+.night-theme .contact-form label,
+.night-theme .contact-form input,
+.night-theme .contact-form textarea {
+    color: #ECF0F1;
+}
+.night-theme button.btn {
+    background-color: #666f33;
+    color: #ECF0F1;
+}
+
+.night-theme button.btn:hover {
+    background-color: #bee56b;
+}
+
+
+
+
