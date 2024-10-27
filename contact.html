@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Contact us Beauty Hub</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <h1 class="navbar-brand"><a href="index.html">BEAUTY HUB</a></h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">PRODUCTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutorials.html">TUTORIALS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="discounts.html">DISCOUNTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="loginIcon" data-toggle="modal" data-target="#loginModal">
+                            <i class="fa fa-user-circle-o"></i> LOGIN
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="logoutIcon" style="display: none;" onclick="logout()">
+                            <i class="fa fa-sign-out"></i> LOGOUT
+                        </a>
+                    </li>   
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <div class="container my-5">
+        <div class="card text-bg-dark mb-4">
+            <img src="img/contactuspic.jpg" class="card-img" alt="Contact Us">
+            <div class="card-img-overlay">
+                <h5 class="card-title">Get in Touch with Us</h5>
+                <p class="card-text">We are happy to help you with any beauty emergency♡</p>
+            </div>
+        </div>
+
+        <div class="theme-toggle-container">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider"></div>
+            </label>
+            <span class="toggle-text">Day/Night Mode✨</span>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+              
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>"You can never take too much care over the choice of your shoes. Too many women think that they are unimportant, but the real proof of an elegant woman is what is on her feet."</p>
+                <footer class="blockquote-footer">Christian Dior </footer>
+              </blockquote>
+            </div>
+          </div>
+
+          
+
+          <div id="popupForm" class="popup-form">
+            <div class="form-container">
+                <span class="close-btn" onclick="togglePopup()">&times;</span>
+                <h3>Subscribe to our Newsletter</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="popupEmail">Email:</label>
+                        <input type="email" id="popupEmail" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger animate">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <button class="btn btn-primary mt-3 animate" onclick="togglePopup()">Subscribe</button>
+    
+
+
+        <div class="contact-info mb-5">
+            <div class="row">
+                <div class="col-lg-4 mb-4 text-center">
+                    <div class="branch-image-container">
+                        <img src="img/branch3.jpg" alt="branch3" class="branch-image">
+                    </div>
+                    <div class="branch-details">
+                        <h4>Beauty Hub - New York</h4>
+                        <p>123 5th Avenue, Manhattan, NY 10010<br>
+                        Phone: (212) 555-1234<br>
+                        Email: nyc@beautyhub.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 text-center"> 
+                    <div class="branch-image-container">
+                        <img src="img/branch2.jpg" alt="branch2" class="branch-image">
+                    </div>
+                    <div class="branch-details">
+                        <h4>Beauty Hub - Los Angeles</h4>
+                        <p>456 Sunset Blvd, Los Angeles, CA 90028<br>
+                        Phone: (310) 555-5678<br>
+                        Email: la@beautyhub.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 text-center"> 
+                    <div class="branch-image-container">
+                        <img src="img/branch1.jpg" alt="branch1" class="branch-image">
+                    </div>
+                    <div class="branch-details">
+                        <h4>Beauty Hub - Chicago</h4>
+                        <p>789 W North Ave, Chicago, IL 60610<br>
+                        Phone: (312) 555-7890<br>
+                        Email: chicago@beautyhub.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Rate us!</h4>
+
+            <div class="rating">
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+                <i class="fa fa-star star"></i>
+            </div>
+            
+            
+    
+
+        <section id="contact-form-section" class="contact-form-section">
+            <h3 class="section-heading">Send Us a Message</h3>
+            <form class="contact-form" id="contactForm" onsubmit="return validateFormAndShowPopup(event)">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                    <label>Your Gender:</label>
+                    <div class="form-check">
+                        <input type="radio" id="female" name="gender" value="female" class="form-check-input">
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="male" name="gender" value="male" class="form-check-input">
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="rathernotspecify" name="gender" value="rathernotspecify" class="form-check-input">
+                        <label for="rathernotspecify" class="form-check-label">Rather not specify</label>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+        
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                </div>
+        
+                <button type="submit" class="btn btn-danger animate">Send Message</button>
+                <button type="button" class="btn btn-secondary animate" id="resetButton">Reset</button>
+            </form>
+        </section>
+        
+    
+        <div id="successPopup" class="success-popup">
+            <div class="success-container">
+                <span class="success-close-btn" onclick="closeSuccessPopup()">&times;</span>
+                <h3>You successfully sent us a message! 😊</h3>
+                <p>Thank you!</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </main>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Log in 💅</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please enter your credentials to log in:</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="footer-section">
+        <p>&copy; @ainur_ali, @darina_abdukadyrova, @akerke_kassymbekova | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/contact.js"></script>
+
+</body>
+</html>

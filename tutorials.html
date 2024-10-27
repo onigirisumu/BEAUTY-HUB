@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="css/tutorials.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tutorials - New Videos</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <h1 class="navbar-brand"><a href="index.html">BEAUTY HUB</a></h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">PRODUCTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutorials.html">TUTORIALS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="discounts.html">DISCOUNTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="loginIcon" data-toggle="modal" data-target="#loginModal">
+                            <i class="fa fa-user-circle-o"></i> LOGIN
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="logoutIcon" style="display: none;" onclick="logout()">
+                            <i class="fa fa-sign-out"></i> LOGOUT
+                        </a>
+                    </li>        
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <img src="img/tutorial.jpg" alt="Content Image">
+            <h1>Welcome to Our Beauty Tutorials!
+            <button id="HelloButton" style="font-size: 40px; background: none; border: none; cursor: pointer;">🪄</button></h1>
+            <audio id="notificationSound" src="sounds/not.mp3" preload="auto"></audio>
+        
+
+            <blockquote>
+                <p><b>"The best beauty secret is to be confident in your own skin and embrace your unique beauty."</b></p>
+            </blockquote>
+        </section>
+        <section class="script">
+            <dl>
+                <p>We're thrilled to have you here at Beauty Hub, where we share the secrets to enhancing your natural beauty with ease. Whether you're new to the world of beauty or looking to refine your skills, our carefully curated tutorials are designed to guide you every step of the way. Dive into our collection of videos that cover a range of topics—from mastering the perfect skincare routine to achieving stunning makeup looks for any occasion. Our step-by-step guides and expert tips are here to inspire and empower you to look and feel your best. Grab your favorite beauty products, get comfortable, and let's get started on this journey together! Click on the videos below to begin your transformation.</p>
+            </dl>
+            <dl>
+                <p>Our tutorials are crafted to cater to all skill levels, whether you're just starting out or are a seasoned beauty enthusiast. Each video is designed to be easy to follow, ensuring you can replicate the looks and techniques with confidence. From achieving a flawless base to perfecting your eyeliner, our experts break down every step so you can master each technique at your own pace. We also love to hear from our community! Share your results, ask questions, or simply connect with other beauty lovers through our comments section. Your feedback helps us create even more tailored content and fosters a supportive beauty community. Ready to elevate your beauty game? Explore our tutorials, discover new techniques, and let your inner beauty shine through. Start watching now and transform your beauty routine into an art form! Feel free to browse through our selection of tutorials below and start your beauty adventure today.</p>
+            </dl>
+        </section>
+        
+        
+        <div class="theme-toggle-container">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider"></div>
+            </label>
+            <span class="toggle-text">Day/Night Mode✨</span>
+        </div>
+        
+        
+        <section class="tutorials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <article class="tutorial">
+                            <h2>Get Makeup with Me: Perfecting Your Skin for a Flawless Look!</h2>
+                            <p>Ready to transform your beauty routine? Join us in our latest video, “Get Makeup with Me!”, where we dive into the secrets of achieving a flawless skin base that’s perfect for any makeup look.</p>
+                            <iframe src="https://www.youtube.com/embed/bEKufM_im88" style="border:none;" allowfullscreen></iframe>
+                        </article>
+                    </div>
+        
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <article class="tutorial">
+                            <h2>Achieve the Glass Skin Glow: Your Ultimate Skincare Routine Guide!</h2>
+                            <p>Dreaming of that dewy, radiant glass skin look? Look no further! The latest video of @nicolehong is here to help you perfect your skincare routine and achieve that luminous, mirror-like glow.</p>
+                            <iframe src="https://www.youtube.com/embed/xPf-t38BdLM" style="border:none;" allowfullscreen></iframe>
+                        </article>
+                    </div>
+        
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <article class="tutorial">
+                            <h2>Relaxing Evening Skincare Routine</h2>
+                            <p>End your day with a relaxing evening skincare routine. Learn how to properly cleanse, nourish, and restore your skin before bed.</p>
+                            <iframe src="https://www.youtube.com/embed/dKpcTQMkPKE" style="border:none;" allowfullscreen></iframe>
+                        </article>
+                    </div>
+        
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <article class="tutorial">
+                            <h2>Ultimate Hair Care Guide: Tips for Healthy, Shiny Hair!</h2>
+                            <p>Discover the secrets to healthy, shiny hair with our top hair care tips. Learn how to nourish, protect, and style your hair with the right products and techniques.</p>
+                            <iframe src="https://www.youtube.com/embed/ZU8Xl04-ZIE" style="border:none;" allowfullscreen></iframe>
+                        </article>
+                    </div>
+        
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <article class="tutorial">
+                            <h2>Revitalize Your Skin Overnight: The Ultimate Nighttime Skin Care Routine</h2>
+                            <p>Transform your skin while you sleep with our ultimate nighttime skin care routine. Discover how to deeply cleanse, hydrate, and rejuvenate your skin.</p>
+                            <iframe src="https://www.youtube.com/embed/O_qgaOUR3Fo" style="border:none;" allowfullscreen></iframe>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <article class="tutorial">
+                            <h2>Do Korean Makeup with Us: Perfecting Your Skin for a Flawless Look!</h2>
+                            <p>Ready to transform your beauty routine? Join us in our latest video, “Get Makeup with Me!”, where we dive into the secrets of achieving a flawless skin base that’s perfect for any makeup look.</p>
+                            <iframe src="https://www.youtube.com/embed/3uawCjHP2BQ" style="border:none;" allowfullscreen></iframe>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button id="giveFeedbackButton" class="btn">Give Feedback</button>
+
+
+        <div id="popupFeedbackForm" class="popup-form">
+            <div class="popup-content">
+                <span id="closeFeedbackFormButton" class="close">&times;</span>
+                <h2>We Value Your Feedback!</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback:</label>
+                        <textarea id="feedback" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Send Feedback</button>
+                </form>
+            </div>
+        </div><br><br>
+
+        <section class="product-reel">
+            <h2>Spotlight on Used Products</h2>
+            <div class="text">
+                <p>Immerse yourself in our curated collection of pre-loved products showcased in this video. Watch them come to life and uncover their standout features.</p>
+            </div>
+        
+            <div id="productCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-around">
+                            <div class="product">
+                                <img src="img/foundation.jpg" alt="Foundation Georgio Armani" class="d-block w-100">
+                                <div class="product-info">
+                                    <p>Foundation Georgio Armani</p>
+                                    <p>34,990 tg</p>
+                                    <a href="product.html" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="img/charlottecontour.jpg" alt="Charlotte Tilbury Contour" class="d-block w-100">
+                                <div class="product-info">
+                                    <p>Charlotte Tilbury Contour</p>
+                                    <p>20,200 tg</p>
+                                    <a href="product.html" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="img/dalbamist.jpg" alt="D'Alba Mist" class="d-block w-100">
+                                <div class="product-info">
+                                    <p>D'Alba Mist</p>
+                                    <p>18,500 tg</p>
+                                    <a href="product.html" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="product">
+                                <img src="img/charlotteblush.jpg" alt="Charlotte Tilbury Blush" class="d-block w-100">
+                                <div class="product-info">
+                                    <p>Charlotte Tilbury Blush</p>
+                                    <p>20,200 tg</p>
+                                    <a href="product.html" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <img src="img/charlottepudra.jpg" alt="Charlotte Tilbury Pink Powder Blush" class="d-block w-100">
+                                <div class="product-info">
+                                    <p>Charlotte Tilbury Pink Powder Blush</p>
+                                    <p>24,990 tg</p>
+                                    <a href="product.html" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section><br><br>
+        
+        <section class="guide-faq">
+            <h2>💗 Frequently Asked Questions 💗</h2>
+            <div class="tutorial-accordion">
+                <div class="tutorial-item">
+                    <button id="accordion-button-1" aria-expanded="false">
+                        <span class="tutorial-title">1. What types of tutorials does Beauty Hub offer?</span>
+                        <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="tutorial-content">
+                        <p>Beauty Hub offers a wide range of tutorials, including makeup application techniques, skincare routines, hair styling tips, and more. Whether you're a beginner or an expert, we have tutorials to suit your needs.</p>
+                    </div>
+                </div>
+                <div class="tutorial-item">
+                    <button id="accordion-button-2" aria-expanded="false">
+                        <span class="tutorial-title">2. Are the tutorials free?</span>
+                        <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="tutorial-content">
+                        <p>Yes! All of our tutorials are free and accessible to everyone. Simply visit our Tutorials section and start learning new beauty techniques at no cost.</p>
+                    </div>
+                </div>
+                <div class="tutorial-item">
+                    <button id="accordion-button-3" aria-expanded="false">
+                        <span class="tutorial-title">3. Can I request a specific tutorial?</span>
+                        <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="tutorial-content">
+                        <p>Absolutely! We welcome requests for specific tutorials. If there's a particular technique or style you'd like to see, feel free to contact us, and we'll do our best to create content that matches your needs.</p>
+                    </div>
+                </div>
+                <div class="tutorial-item">
+                    <button id="accordion-button-4" aria-expanded="false">
+                        <span class="tutorial-title">4. How can I follow along with the tutorials?</span>
+                        <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="tutorial-content">
+                        <p>All our tutorials are designed to be user-friendly, with clear step-by-step instructions. You can follow along using your own beauty products, or check the recommended products we list in each tutorial.</p>
+                    </div>
+                </div>
+                <div class="tutorial-item">
+                    <button id="accordion-button-5" aria-expanded="false">
+                        <span class="tutorial-title">5. Do you offer tutorials for beginners?</span>
+                        <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="tutorial-content">
+                        <p>Yes, we have a wide range of tutorials for beginners, covering the basics of makeup, skincare, and haircare. These tutorials are perfect for those just starting their beauty journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Log in 💅</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please enter your credentials to log in:</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="text-center">
+        <p>&copy; @ainur_ali, @darina_abdukadyrova, @akerke_kassymbekova | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/tutorials.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

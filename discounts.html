@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="css/discounts.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Discounts - Exclusive daily promotions</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <h1 class="navbar-brand"><a href="index.html">BEAUTY HUB</a></h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">PRODUCTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutorials.html">TUTORIALS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="discounts.html">DISCOUNTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="loginIcon" data-toggle="modal" data-target="#loginModal">
+                            <i class="fa fa-user-circle-o"></i> LOGIN
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="logoutIcon" style="display: none;" onclick="logout()">
+                            <i class="fa fa-sign-out"></i> LOGOUT
+                        </a>
+                    </li>       
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="content">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="img/photo1.jpg" class="d-block w-100" alt="Beauty Banner">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Unlock Exclusive Discounts Just for You!</h5>
+                        <p>Discover unbeatable deals on your favorite beauty and skincare products! </p>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="img/discountbanert.jpg" class="d-block w-100" alt="Discount Banner">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Take advantage of our limited-time offers, bundle deals, and seasonal specials to save big.</p>
+                    </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+
+        
+
+        <section class="product-reel text-center mt-5">
+            <div class="theme-toggle-container">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider"></div>
+                </label>
+                <span class="toggle-text">Day/Night Mode✨</span>
+            </div>
+            <h2>Discounted Products</h2><br>
+            <div class="row">
+                <article class="col-sm-6 col-md-3">
+                    <div class="product">
+                        <img src="img/discount1.jpg" alt="Collagen Toner Pads" class="img-fluid">
+                        <div class="product-info">
+                            <p>Collagen Toner Pads</p>
+                            <a href="#discount1" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-sm-6 col-md-3">
+                    <div class="product">
+                        <img src="img/discount2.jpg" alt="Bidalli Centella Toner" class="img-fluid">
+                        <div class="product-info">
+                            <p>Bidalli Centella Toner</p>
+                            <a href="#discount2" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-sm-6 col-md-3">
+                    <div class="product">
+                        <img src="img/discount3.jpg" alt="Dr.Ceuracle Vegan Kombucha Essence" class="img-fluid">
+                        <div class="product-info">
+                            <p>Dr.Ceuracle Vegan Kombucha Essence</p>
+                            <a href="#discount3" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-sm-6 col-md-3">
+                    <div class="product">
+                        <img src="img/discount4.jpg" alt="Dr.Ceuracle Active Berry Essence" class="img-fluid">
+                        <div class="product-info">
+                            <p>Dr.Ceuracle Active Berry Essence</p>
+                            <a href="#discount4" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section class="firsttext text-center my-5">
+            <div class="container">
+                <h2 class="display-4">Hurry, Limited-Time Discounts!</h2>
+                <p class="lead">Don't miss out on these exclusive deals! Our special discounts are available only for a limited time.</p>
+                <p id="moreContent" class="hidden-content" style="display: none;">🌟 Stay Ahead with Our Weekly Discounts! 🌟
+                    Join us on an exciting journey where savings await at every turn! Our discounts refresh every week, unveiling a treasure trove of new offers and captivating products that you won’t want to miss. Whether you're hunting for the latest trends, must-have gadgets, or unique finds, we’ve got something special lined up just for you!
+                    
+                    Keep your eyes peeled and your shopping carts ready, as each week brings fresh surprises designed to delight and inspire. Don't just shop—experience the thrill of discovering incredible deals that make your wallet smile! 🌈✨
+                    
+                    Dive in and discover the joy of shopping smarter with us!
+                </p>
+                <button id="readMoreButton" onclick="toggleContent()" class="btn btn-info">Read More</button>
+            </div>
+        </section>
+        
+        
+    
+        <section class="discounts mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="img/discount1.jpg" class="card-img-top img-fluid" alt="Collagen Toner Pads">
+                            <div class="card-body">
+                                <h3 class="card-title">Collagen Toner Pads</h3>
+                                <p class="card-text">Collagen-Enriched Formula: These toner pads are infused with collagen to help firm and hydrate your skin. Pre-soaked and ready to use, these pads offer an easy way to incorporate collagen benefits into your daily skincare routine.</p>
+                                <span class="badge badge-success">20% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="img/discount2.jpg" class="card-img-top img-fluid" alt="Bidalli Centella Toner">
+                            <div class="card-body">
+                                <h3 class="card-title">Bidalli Centella Toner</h3>
+                                <p class="card-text">Centella Asiatica Extract: Known for its powerful healing properties, this toner helps maintain the skin’s natural balance and is perfect for those looking to embrace purity.</p>
+                                <span class="badge badge-success">15% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="img/discount3.jpg" class="card-img-top img-fluid" alt="Dr.Ceuracle Vegan Kombucha Essence">
+                            <div class="card-body">
+                                <h3 class="card-title">Dr.Ceuracle Vegan Kombucha Essence</h3>
+                                <p class="card-text">Crafted with vegan ingredients and kombucha, this essence promotes healthy, glowing skin and combats signs of aging.</p>
+                                <span class="badge badge-success">25% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="img/discount4.jpg" class="card-img-top img-fluid" alt="Dr.Ceuracle Active Berry Essence">
+                            <div class="card-body">
+                                <h3 class="card-title">Dr.Ceuracle Active Berry Essence</h3>
+                                <p class="card-text">Packed with active berry extracts, this essence provides antioxidant-rich benefits that protect the skin from environmental damage.</p>
+                                <span class="badge badge-success">25% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="img/blush1.jpg" class="card-img-top img-fluid" alt="Rhode Blush">
+                            <div class="card-body">
+                                <h3 class="card-title">Rhode Blush</h3>
+                                <p class="card-text"> Formulated to blend seamlessly, it offers a natural finish that can be easily built up for a more dramatic look. The lightweight formula is infused with skin-loving ingredients, ensuring hydration while delivering a soft, dewy appearance. </p>
+                                <span class="badge badge-success">10% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="img/blush2.jpg" class="card-img-top img-fluid" alt="Rare Beauty Blush">
+                            <div class="card-body">
+                                <h3 class="card-title">Rare Beauty Blush</h3>
+                                <p class="card-text">Formulated to blend seamlessly, it offers a natural finish that can be easily built up for a more dramatic look. The lightweight formula is infused with skin-loving ingredients, ensuring hydration while delivering a soft, dewy appearance. </p>
+                                <span class="badge badge-success">25% OFF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+
+        
+        <div class="shopcart1">
+            <h1>🛒 Buy a product 🛒</h1>
+            <form id="multiStepForm">
+                <div class="form-step active">
+                    <h2>Step 1: Personal Information</h2>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <div id="nameError" class="error-message" style="color: red;"></div>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="emailError" class="error-message" style="color: red;"></div>
+        
+                    <div class="buttons">
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+                
+                <div class="form-step">
+                    <h2>Step 2: Product Information</h2>
+                    <label for="product">Product:</label>
+                    <input type="text" id="product" name="product" required>
+                    <div id="productError" class="error-message" style="color: red;"></div>
+        
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required>
+                    <div id="quantityError" class="error-message" style="color: red;"></div>
+        
+                    <div class="buttons">
+                        <button type="button" class="back-btn">Back</button>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+        
+                <div class="form-step">
+                    <h2>Step 3: Confirmation</h2>
+                    <p>Please review your information before submitting.</p>
+                    <div id="review"></div>
+                    <div class="buttons">
+                        <button type="button" class="back-btn">Back</button>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div id="successMessage" class="success-message" style="display:none;">
+                Form submitted successfully!
+            </div>
+        </div>
+        
+        <section class="rate-experience text-center mt-5">
+            <h3>Rate Your Experience Of Using Our Website</h3>
+            <div class="rating">
+                <span onclick="setRating(event, 1)" class="star">★</span>
+                <span onclick="setRating(event, 2)" class="star">★</span>
+                <span onclick="setRating(event, 3)" class="star">★</span>
+                <span onclick="setRating(event, 4)" class="star">★</span>
+                <span onclick="setRating(event, 5)" class="star">★</span>
+            </div>
+            <div id="messageContainer">Your rating will appear here.</div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Log in 💅</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please enter your credentials to log in:</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="text-center">
+        <p>&copy; @ainur_ali, @darina_abdukadyrova, @akerke_kassymbekova | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/discounts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
