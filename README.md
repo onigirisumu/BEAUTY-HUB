@@ -36,7 +36,7 @@ This functionality was implemented using a simple JavaScript function that liste
  
 
 Setup Instructions
-1.	Clone the repository: git clone https://github.com/your-username/beauty-hub.git
+1.	Clone the repository: git clone https://github.com/onigirisum/beauty-hub.git
 2.	Navigate to the project directory: cd beauty-hub
 3.	Open index.html in your browser to view the website.
 
