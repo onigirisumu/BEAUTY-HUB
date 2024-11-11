@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function applyFilters(categoryFilter, priceFilter) {
         const productCards = document.querySelectorAll('.card');
-        const resultContainer = document.querySelector('.row'); // Update to match your container if needed
-        resultContainer.innerHTML = ''; // Clear previous results
+        const resultContainer = document.getElementById('filtered-products-container'); // Use the new filtered container
+        resultContainer.innerHTML = ''; // Clear previous results in the filtered section
 
         productCards.forEach(card => {
             const category = card.getAttribute('data-category');
@@ -29,15 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (isMatch) {
-                const clonedCard = card.cloneNode(true); // Clone the matched card
-                clonedCard.style.display = 'block'; // Ensure it's visible
-                clonedCard.classList.add('single-row'); // Add class for styling single-row layout
-                resultContainer.appendChild(clonedCard); // Append the cloned card to result container
+                const clonedCard = card.cloneNode(true); // Clone to avoid changing the original
+                clonedCard.style.display = 'block'; // Ensure visibility
+                resultContainer.appendChild(clonedCard); // Append to the filtered section
             }
         });
+
+        // Optional: Display a message if no products match the filter
+        if (!resultContainer.hasChildNodes()) {
+            const noMatchMessage = document.createElement('p');
+            noMatchMessage.textContent = 'No products match your filters.';
+            resultContainer.appendChild(noMatchMessage);
+        }
     }
 });
-
 
 
 
