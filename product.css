@@ -191,19 +191,84 @@ nav {
     text-align: center;
     margin: 35px 0;
 }
+
+
+
+
+
+
 #filtered-products-section {
     margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background to distinguish section */
+    border-radius: 8px;
 }
 
-#filtered-products-container .card {
-    width: 100%; /* Each card spans the full width */
-    margin-bottom: 20px; /* Space between filtered cards */
+#filtered-products-section h2 {
+    color: #ca5093; /* Accent color */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.filter-container{
-    margin: 10px 50px;
-    padding: 10px 50px;
+#filtered-products-container .filtered-card {
+    width: 100%;
+    max-width: 300px; /* Optional max-width to avoid oversized cards */
+    margin: 10px auto; /* Center each card */
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
+
+#filtered-products-container .filtered-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#filtered-products-container .filtered-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#filtered-products-container .filtered-card .card-title {
+    font-size: 1.2rem;
+    color: #250316;
+    margin-bottom: 10px;
+}
+
+#filtered-products-container .filtered-card .card-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#filtered-products-container .filtered-card .btn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#filtered-products-container .filtered-card .btn:hover {
+    background-color: #ff1493;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .novinki{
     margin: 0 100px;
