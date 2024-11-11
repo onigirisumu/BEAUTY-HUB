@@ -1,67 +1,91 @@
-function applyFilters(categoryFilter, priceFilter) {
-    const productCards = document.querySelectorAll('.card');
-    const resultContainer = document.getElementById('filtered-products-container');
-    resultContainer.innerHTML = ''; // Clear previous results
+document.addEventListener('DOMContentLoaded', function() {
+    // Load saved filter settings from localStorage
+    const savedCategoryFilter = localStorage.getItem('categoryFilter');
+    const savedPriceFilter = localStorage.getItem('priceFilter');
 
-    // Hide all product sections initially
-    document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
-        section.style.display = 'none';
-    });
-
-    let hasMatch = false;
-
-    // Filter through products
-    productCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const price = parseInt(card.getAttribute('data-price'), 10);
-        let isMatch = true;
-
-        if (categoryFilter !== 'all' && category !== categoryFilter) {
-            isMatch = false;
-        }
-
-        if (priceFilter !== 'all') {
-            const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
-            if (price < minPrice || price > maxPrice) {
-                isMatch = false;
-            }
-        }
-
-        if (isMatch) {
-            hasMatch = true;
-            card.style.display = 'block'; // Show matching card
-            resultContainer.appendChild(card); // Append card directly
-        } else {
-            card.style.display = 'none'; // Hide non-matching card
-        }
-    });
-
-    // Display message if no products match
-    if (!hasMatch) {
-        const noMatchMessage = document.createElement('p');
-        noMatchMessage.textContent = 'No products match your filters.';
-        resultContainer.appendChild(noMatchMessage);
+    // Apply saved filter settings if they exist
+    if (savedCategoryFilter) {
+        document.getElementById('categoryFilter').value = savedCategoryFilter;
+    }
+    if (savedPriceFilter) {
+        document.getElementById('priceFilter').value = savedPriceFilter;
     }
 
-    // Show the filtered products section
-    document.getElementById('filtered-products-section').style.display = 'block';
-}
+    // Apply filters immediately on page load
+    applyFilters();
 
-resetButton.addEventListener('click', function() {
-    // Show all original product sections again
-    document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
-        section.style.display = 'block'; // Ensure product sections are shown
+    // Event listener for applying filters
+    document.getElementById('filterButton').addEventListener('click', function() {
+        const categoryFilter = document.getElementById('categoryFilter').value;
+        const priceFilter = document.getElementById('priceFilter').value;
+
+        // Save filter settings to local storage
+        localStorage.setItem('categoryFilter', categoryFilter);
+        localStorage.setItem('priceFilter', priceFilter);
+
+        applyFilters();
     });
 
-    // Clear filtered products container
-    document.getElementById('filtered-products-container').innerHTML = ''; // Clear previous filter results
+    // Function to apply filters
+    function applyFilters() {
+        const categoryFilter = document.getElementById('categoryFilter').value;
+        const priceFilter = document.getElementById('priceFilter').value;
+        const productCards = document.querySelectorAll('.card');
+        const filteredProductsContainer = document.getElementById('filtered-products-container');
 
-    // Hide the filtered products section
-    document.getElementById('filtered-products-section').style.display = 'none'; // Hide filtered section
+        // Clear previous filtered products
+        filteredProductsContainer.innerHTML = '';
 
-    // Reset filter values to 'all' so no filters are applied
-    document.getElementById('categoryFilter').value = 'all';
-    document.getElementById('priceFilter').value = 'all';
+        productCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            const price = parseInt(card.getAttribute('data-price'));
+            let showCard = true;
+
+            if (categoryFilter !== 'all' && category !== categoryFilter) {
+                showCard = false;
+            }
+
+            if (priceFilter !== 'all') {
+                const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
+                if (price < minPrice || price > maxPrice) {
+                    showCard = false;
+                }
+            }
+
+            // If card matches the filter, show it in the filtered products section
+            if (showCard) {
+                filteredProductsContainer.appendChild(card);
+            } else {
+                card.style.display = 'none';  // Hide the card if it doesn't match
+            }
+        });
+
+        // Show filtered products section
+        document.getElementById('filtered-products-section').style.display = filteredProductsContainer.children.length ? 'block' : 'none';
+    }
+
+    // Reset button functionality
+    const resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener('click', function() {
+        // Show all sections again (novinki, makeup, haircare, etc.)
+        document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
+            section.style.display = 'block';  // Ensure product sections are visible
+        });
+
+        // Reset filter values to 'all'
+        document.getElementById('categoryFilter').value = 'all';
+        document.getElementById('priceFilter').value = 'all';
+
+        // Clear filter settings from localStorage
+        localStorage.removeItem('categoryFilter');
+        localStorage.removeItem('priceFilter');
+
+        // Clear the filtered products container
+        document.getElementById('filtered-products-container').innerHTML = '';  // Ensure no previous filtered results remain
+
+        // Hide the filtered products section
+        document.getElementById('filtered-products-section').style.display = 'none';  // Hide the filtered section
+    });
 });
 
 
