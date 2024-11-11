@@ -47,6 +47,28 @@ function applyFilters(categoryFilter, priceFilter) {
     document.getElementById('filtered-products-section').style.display = 'block';
 }
 
+resetButton.addEventListener('click', function() {
+    // Show all original product sections again
+    document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
+        section.style.display = 'block'; // Ensure product sections are shown
+    });
+
+    // Clear filtered products container
+    document.getElementById('filtered-products-container').innerHTML = ''; // Clear previous filter results
+
+    // Hide the filtered products section
+    document.getElementById('filtered-products-section').style.display = 'none'; // Hide filtered section
+
+    // Reset filter values to 'all' so no filters are applied
+    document.getElementById('categoryFilter').value = 'all';
+    document.getElementById('priceFilter').value = 'all';
+
+    // Clear filter settings from localStorage
+    localStorage.removeItem('categoryFilter');
+    localStorage.removeItem('priceFilter');
+});
+
+
 
 
 //Assignment 6
