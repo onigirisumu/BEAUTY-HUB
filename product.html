@@ -89,6 +89,7 @@
           </select>
       </div>
       <button id="filterButton" class="btn btn-pink animate">Apply Filters</button>
+<button id="resetFilterButton" class="btn btn-secondary">Reset Filters</button>
   </div>
   
   <section id="novinki">
@@ -209,15 +210,10 @@
   </section>
   
 
-
-
-  </main>
-
-<section id="filtered-products-section">
+  <section id="filtered-products-section" style="display: none;">
     <h2 class="section-heading">Filtered Products</h2>
-    <div class="row" id="filtered-products-container"></div> <!-- Container for filtered products -->
-</section>
-
+    <div class="row" id="filtered-products-container"></div>
+  </section>
   
   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
