@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function applyFilters(categoryFilter, priceFilter) {
         const productCards = document.querySelectorAll('.card');
-        const resultContainer = document.querySelector('.row'); // Adjust this selector to match your container if needed
+        const resultContainer = document.querySelector('.row'); // Update to match your container if needed
         resultContainer.innerHTML = ''; // Clear previous results
 
         productCards.forEach(card => {
@@ -31,12 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isMatch) {
                 const clonedCard = card.cloneNode(true); // Clone the matched card
                 clonedCard.style.display = 'block'; // Ensure it's visible
-                clonedCard.classList.add('single-row'); // Optional: Add a class for styling single-row layout
-                resultContainer.appendChild(clonedCard); // Append the cloned card
+                clonedCard.classList.add('single-row'); // Add class for styling single-row layout
+                resultContainer.appendChild(clonedCard); // Append the cloned card to result container
             }
         });
     }
 });
+
 
 
 
