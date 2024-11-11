@@ -85,9 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Hide the filtered products section
         document.getElementById('filtered-products-section').style.display = 'none';  // Hide the filtered section
+
+        // Show the default product sections again
+        document.querySelectorAll('.product-section').forEach(section => {
+            section.style.display = 'block';
+        });
     });
 });
-
 
 
 
