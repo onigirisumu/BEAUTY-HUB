@@ -33,9 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const productCards = document.querySelectorAll('.card');
         let displayedCount = 0;
 
-        // Debugging - Let's ensure we're showing all products initially.
-        console.log("Applying Filters:", categoryFilter, priceFilter);
-
         productCards.forEach(card => {
             const category = card.getAttribute('data-category');
             const price = parseInt(card.getAttribute('data-price'));
@@ -63,9 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Debugging - Print how many products are being displayed
-        console.log("Displayed products:", displayedCount);
-
         // Show or hide the filtered products section based on the number of products shown
         const filteredSection = document.getElementById('filtered-products-section');
         filteredSection.style.display = displayedCount > 0 ? 'block' : 'none';
@@ -82,25 +76,25 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('categoryFilter');
         localStorage.removeItem('priceFilter');
 
-        // Clear the filtered products container (remove any applied filter)
-        document.getElementById('filtered-products-container').innerHTML = '';  // Ensure no previous filtered results remain
-
-        // Show all product sections again (novinki, makeup, haircare, etc.)
+        // Show all product sections (novinki, makeup, haircare, etc.)
         document.querySelectorAll('.product-section').forEach(section => {
             section.style.display = 'block'; // Ensure product sections are visible
         });
 
-        // Reset display of all product cards
+        // Reset the display of all product cards to visible
         const productCards = document.querySelectorAll('.card');
         productCards.forEach(card => {
             card.style.display = 'block'; // Ensure all product cards are shown
         });
 
-        // Hide the filtered products section
-        document.getElementById('filtered-products-section').style.display = 'none';
+        // Reset category and price filters in localStorage
+        localStorage.removeItem('categoryFilter');
+        localStorage.removeItem('priceFilter');
 
-        // Apply filters again to make sure we show everything
-        applyFilters();
+        // Hide the filtered products section and clear any previous filtered results
+        const filteredProductsContainer = document.getElementById('filtered-products-container');
+        filteredProductsContainer.innerHTML = '';  // Clear any previous filtered results
+        document.getElementById('filtered-products-section').style.display = 'none'; // Hide filtered section
     });
 });
 
