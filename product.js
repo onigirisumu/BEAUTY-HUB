@@ -62,10 +62,6 @@ resetButton.addEventListener('click', function() {
     // Reset filter values to 'all' so no filters are applied
     document.getElementById('categoryFilter').value = 'all';
     document.getElementById('priceFilter').value = 'all';
-
-    // Clear filter settings from localStorage
-    localStorage.removeItem('categoryFilter');
-    localStorage.removeItem('priceFilter');
 });
 
 
