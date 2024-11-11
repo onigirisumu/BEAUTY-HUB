@@ -1,17 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filterButton');
+    const resetButton = document.getElementById('resetFilterButton');
 
+    // Filter products on click
     filterButton.addEventListener('click', function() {
         const categoryFilter = document.getElementById('categoryFilter').value;
         const priceFilter = document.getElementById('priceFilter').value;
         applyFilters(categoryFilter, priceFilter);
     });
 
+    // Reset filters and show all products
+    resetButton.addEventListener('click', function() {
+        document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
+            section.style.display = 'block'; // Show all sections again
+        });
+        document.getElementById('filtered-products-container').innerHTML = ''; // Clear filtered results
+        document.getElementById('filtered-products-section').style.display = 'none'; // Hide filtered section
+    });
+
+    // Function to apply filters
     function applyFilters(categoryFilter, priceFilter) {
         const productCards = document.querySelectorAll('.card');
-        const resultContainer = document.getElementById('filtered-products-container'); // Use new container for filtered results
+        const resultContainer = document.getElementById('filtered-products-container'); // Container for filtered products
         resultContainer.innerHTML = ''; // Clear previous results
 
+        // Hide all original product sections
+        document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
+            section.style.display = 'none';
+        });
+
+        let hasMatch = false;
+
+        // Filter through products and display matches only in the filtered section
         productCards.forEach(card => {
             const category = card.getAttribute('data-category');
             const price = parseInt(card.getAttribute('data-price'), 10);
@@ -29,18 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (isMatch) {
+                hasMatch = true;
                 const clonedCard = card.cloneNode(true);
                 clonedCard.style.display = 'block';
-                clonedCard.classList.add('filtered-card'); // Add class for CSS styling
                 resultContainer.appendChild(clonedCard);
             }
         });
 
-        if (!resultContainer.hasChildNodes()) {
+        // Display "No products match" message if there are no matches
+        if (!hasMatch) {
             const noMatchMessage = document.createElement('p');
             noMatchMessage.textContent = 'No products match your filters.';
             resultContainer.appendChild(noMatchMessage);
         }
+
+        // Show the filtered products section
+        document.getElementById('filtered-products-section').style.display = 'block';
     }
 });
 
