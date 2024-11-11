@@ -1,30 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('filterButton').addEventListener('click', function() {
+    const filterButton = document.getElementById('filterButton');
+    
+    filterButton.addEventListener('click', function() {
         const categoryFilter = document.getElementById('categoryFilter').value;
         const priceFilter = document.getElementById('priceFilter').value;
+        applyFilters(categoryFilter, priceFilter);
+    });
 
+    function applyFilters(categoryFilter, priceFilter) {
         const productCards = document.querySelectorAll('.card');
+        const resultContainer = document.querySelector('.row'); // Adjust to your container
+        resultContainer.innerHTML = ''; // Clear previous results
 
         productCards.forEach(card => {
             const category = card.getAttribute('data-category');
-            const price = parseInt(card.getAttribute('data-price'));
-
-            let showCard = true;
+            const price = parseInt(card.getAttribute('data-price'), 10);
+            let isMatch = true;
 
             if (categoryFilter !== 'all' && category !== categoryFilter) {
-                showCard = false;
+                isMatch = false;
             }
 
             if (priceFilter !== 'all') {
                 const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
                 if (price < minPrice || price > maxPrice) {
-                    showCard = false;
+                    isMatch = false;
                 }
             }
 
-            card.style.display = showCard ? 'block' : 'none';
+            if (isMatch) {
+                resultContainer.appendChild(card); // Only append matching cards
+            }
         });
-    });
+    }
 });
 
 
