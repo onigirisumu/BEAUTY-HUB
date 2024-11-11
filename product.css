@@ -197,6 +197,11 @@ nav {
 
 
 
+#filterButton, #resetFilterButton {
+    margin-top: 10px;
+}
+
+/* Filtered Products Section */
 #filtered-products-section {
     margin-top: 30px;
     padding: 20px;
@@ -212,10 +217,17 @@ nav {
     margin-bottom: 20px;
 }
 
-#filtered-products-container .filtered-card {
+#filtered-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Filtered Product Cards */
+#filtered-products-container .card {
     width: 100%;
-    max-width: 300px; /* Optional max-width to avoid oversized cards */
-    margin: 10px auto; /* Center each card */
+    max-width: 300px; /* Fixed width for each card */
+    margin: 10px;
     padding: 15px;
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -224,29 +236,29 @@ nav {
     transition: transform 0.3s ease;
 }
 
-#filtered-products-container .filtered-card:hover {
+#filtered-products-container .card:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-#filtered-products-container .filtered-card img {
+#filtered-products-container .card img {
     width: 100%;
     height: auto;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-#filtered-products-container .filtered-card .card-title {
+#filtered-products-container .card .card-title {
     font-size: 1.2rem;
     color: #250316;
     margin-bottom: 10px;
 }
 
-#filtered-products-container .filtered-card .card-text {
+#filtered-products-container .card .card-text {
     font-size: 0.9rem;
     color: #555;
 }
 
-#filtered-products-container .filtered-card .btn {
+#filtered-products-container .card .btn {
     background-color: #ff69b4;
     color: white;
     border: none;
@@ -255,13 +267,18 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-#filtered-products-container .filtered-card .btn:hover {
+#filtered-products-container .card .btn:hover {
     background-color: #ff1493;
 }
 
+/* Reset Original Sections */
+#novinki, #makeup, #haircare {
+    display: block; /* Make sure they are visible initially */
+}
 
-
-
+#novinki, #makeup, #haircare {
+    display: none; /* Hidden when filters are applied */
+}
 
 
 
