@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('priceFilter').value = savedPriceFilter;
     }
 
-    // Apply filters immediately on page load
+    // Apply filters immediately on page load (after DOM content is loaded)
     applyFilters();
 
     // Event listener for applying filters
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const categoryFilter = document.getElementById('categoryFilter').value;
         const priceFilter = document.getElementById('priceFilter').value;
 
-        // Save filter settings to local storage
+        // Save filter settings to localStorage
         localStorage.setItem('categoryFilter', categoryFilter);
         localStorage.setItem('priceFilter', priceFilter);
 
@@ -31,20 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const categoryFilter = document.getElementById('categoryFilter').value;
         const priceFilter = document.getElementById('priceFilter').value;
         const productCards = document.querySelectorAll('.card');
-        const filteredProductsContainer = document.getElementById('filtered-products-container');
+        let displayedCount = 0;
 
-        // Clear previous filtered products
-        filteredProductsContainer.innerHTML = '';
+        // Debugging - Let's ensure we're showing all products initially.
+        console.log("Applying Filters:", categoryFilter, priceFilter);
 
         productCards.forEach(card => {
             const category = card.getAttribute('data-category');
             const price = parseInt(card.getAttribute('data-price'));
             let showCard = true;
 
+            // Check if product matches category filter
             if (categoryFilter !== 'all' && category !== categoryFilter) {
                 showCard = false;
             }
 
+            // Check if product matches price filter
             if (priceFilter !== 'all') {
                 const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
                 if (price < minPrice || price > maxPrice) {
@@ -52,26 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // If card matches the filter, show it in the filtered products section
+            // Show card if it matches filters
             if (showCard) {
-                filteredProductsContainer.appendChild(card);
+                card.style.display = 'block'; // Ensure it's displayed
+                displayedCount++;
             } else {
-                card.style.display = 'none';  // Hide the card if it doesn't match
+                card.style.display = 'none'; // Hide card if it doesn't match filters
             }
         });
 
-        // Show filtered products section
-        document.getElementById('filtered-products-section').style.display = filteredProductsContainer.children.length ? 'block' : 'none';
+        // Debugging - Print how many products are being displayed
+        console.log("Displayed products:", displayedCount);
+
+        // Show or hide the filtered products section based on the number of products shown
+        const filteredSection = document.getElementById('filtered-products-section');
+        filteredSection.style.display = displayedCount > 0 ? 'block' : 'none';
     }
 
     // Reset button functionality
     const resetButton = document.getElementById('resetButton');
     resetButton.addEventListener('click', function() {
-        // Show all sections again (novinki, makeup, haircare, etc.)
-        document.querySelectorAll("#novinki, #makeup, #haircare").forEach(section => {
-            section.style.display = 'block';  // Ensure product sections are visible
-        });
-
         // Reset filter values to 'all'
         document.getElementById('categoryFilter').value = 'all';
         document.getElementById('priceFilter').value = 'all';
@@ -80,16 +82,19 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('categoryFilter');
         localStorage.removeItem('priceFilter');
 
-        // Clear the filtered products container
+        // Clear the filtered products container (remove any applied filter)
         document.getElementById('filtered-products-container').innerHTML = '';  // Ensure no previous filtered results remain
 
-        // Hide the filtered products section
-        document.getElementById('filtered-products-section').style.display = 'none';  // Hide the filtered section
-
-        // Show the default product sections again
+        // Reset display of all product sections to 'block'
         document.querySelectorAll('.product-section').forEach(section => {
             section.style.display = 'block';
         });
+
+        // Hide the filtered products section
+        document.getElementById('filtered-products-section').style.display = 'none';
+
+        // Apply filters again to make sure we show everything
+        applyFilters();
     });
 });
 
@@ -124,59 +129,7 @@ checkbox.addEventListener('change', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Load saved filter settings from local storage
-    const savedCategoryFilter = localStorage.getItem('categoryFilter');
-    const savedPriceFilter = localStorage.getItem('priceFilter');
 
-    // Apply saved filter settings if they exist
-    if (savedCategoryFilter) {
-        document.getElementById('categoryFilter').value = savedCategoryFilter;
-    }
-    if (savedPriceFilter) {
-        document.getElementById('priceFilter').value = savedPriceFilter;
-    }
-
-    // Apply filters immediately on page load
-    applyFilters();
-
-    // Event listener for applying filters
-    document.getElementById('filterButton').addEventListener('click', function() {
-        const categoryFilter = document.getElementById('categoryFilter').value;
-        const priceFilter = document.getElementById('priceFilter').value;
-
-        // Save filter settings to local storage
-        localStorage.setItem('categoryFilter', categoryFilter);
-        localStorage.setItem('priceFilter', priceFilter);
-
-        applyFilters();
-    });
-
-    function applyFilters() {
-        const categoryFilter = document.getElementById('categoryFilter').value;
-        const priceFilter = document.getElementById('priceFilter').value;
-        const productCards = document.querySelectorAll('.card');
-
-        productCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            const price = parseInt(card.getAttribute('data-price'));
-            let showCard = true;
-
-            if (categoryFilter !== 'all' && category !== categoryFilter) {
-                showCard = false;
-            }
-
-            if (priceFilter !== 'all') {
-                const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
-                if (price < minPrice || price > maxPrice) {
-                    showCard = false;
-                }
-            }
-
-            card.style.display = showCard ? 'block' : 'none';
-        });
-    }
-});
 
 // User Authentication: Login and Logout
 const loginForm = document.getElementById('loginForm');
