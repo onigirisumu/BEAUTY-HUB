@@ -191,6 +191,14 @@ nav {
     text-align: center;
     margin: 35px 0;
 }
+#filtered-products-section {
+    margin-top: 30px;
+}
+
+#filtered-products-container .card {
+    width: 100%; /* Each card spans the full width */
+    margin-bottom: 20px; /* Space between filtered cards */
+}
 
 .filter-container{
     margin: 10px 50px;
