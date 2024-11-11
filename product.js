@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('priceFilter').value = savedPriceFilter;
     }
 
-    // Apply filters immediately on page load (after DOM content is loaded)
+    // Apply filters immediately on page load
     applyFilters();
 
     // Event listener for applying filters
@@ -85,9 +85,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear the filtered products container (remove any applied filter)
         document.getElementById('filtered-products-container').innerHTML = '';  // Ensure no previous filtered results remain
 
-        // Reset display of all product sections to 'block'
+        // Show all product sections again (novinki, makeup, haircare, etc.)
         document.querySelectorAll('.product-section').forEach(section => {
-            section.style.display = 'block';
+            section.style.display = 'block'; // Ensure product sections are visible
+        });
+
+        // Reset display of all product cards
+        const productCards = document.querySelectorAll('.card');
+        productCards.forEach(card => {
+            card.style.display = 'block'; // Ensure all product cards are shown
         });
 
         // Hide the filtered products section
