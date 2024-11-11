@@ -218,9 +218,10 @@ nav {
 }
 
 #filtered-products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures responsive grid with consistent column sizes */
+    gap: 20px; /* Adds spacing between cards */
+    justify-items: center; /* Centers the cards within each grid item */
 }
 
 /* Filtered Product Cards */
