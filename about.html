@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  rel="stylesheet">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>About Us - Beauty Hub</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top">
             <h1 class="navbar-brand"><a href="index.html">BEAUTY HUB</a></h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +34,7 @@
                         <a class="nav-link" id="logoutIcon" style="display: none;" onclick="logout()">
                             <i class="fa fa-sign-out"></i> LOGOUT
                         </a>
-                    </li>   
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -42,7 +43,7 @@
 
         <section class="hero">
             <h2>About_us</h2>
-            <img src="about_us.jpg" alt="Hero Image">
+            <img src="img/about_us.jpg" alt="Hero Image">
             <blockquote class="hero-content">
                 <h5>We are here to make you beautiful</h5>
                 <p>At Beauty Hub, we believe in empowering everyone to embrace their unique beauty.</p>
@@ -70,7 +71,9 @@
             </section>
 
             <article class = "section">
-                <img src="aboutcompany.jpg" alt="Our Company">
+                <div class = "img-container">
+                    <img src="img/aboutcompany.jpg" alt="Our Company">
+                </div>
                 <div class="text-content">
                     <h2>Our Company</h2>
                     <p>At Beauty Hub, we take pride in our state-of-the-art facilities, where we combine modern technology with traditional craftsmanship. Our commitment to excellence spans every stage of our process, from research and development to production and quality control.</p>
@@ -84,17 +87,17 @@
                     <h2>Our Products</h2>
                     <p>At Beauty Hub, we pride ourselves on delivering a diverse array of high-quality skincare products designed to meet a variety of needs and preferences. Our commitment to excellence is reflected in every item we offer, each crafted with the utmost care and precision.</p>
                     <p>Our product line includes everything from deeply hydrating moisturizers to rejuvenating serums that enhance your skin's natural beauty. We use premium ingredients such as nourishing shea butter, invigorating vitamins, and powerful antioxidants to ensure that every product delivers exceptional results.</p>
-                    <p>Our moisturizing creams are formulated to provide long-lasting hydration, helping to keep your skin soft and supple. Whether you have dry, normal, or sensitive skin, our creams are designed to restore moisture and promote a healthy complexion.</p>
-                    <p>For those seeking targeted solutions, our serums offer advanced treatments that address specific skin concerns. These serums are enriched with active ingredients that work to improve skin texture, reduce the appearance of fine lines, and enhance overall radiance.</p>
-                    <p>In addition to our creams and serums, we offer a selection of nourishing masks that provide deep, restorative care. These masks are ideal for rejuvenating your skin and giving it a radiant, refreshed appearance. They are perfect for treating your skin to an occasional indulgence or for a regular part of your skincare routine.</p>
-                    <p>To complement our range of creams, serums, and masks, we also offer gentle cleansers that effectively remove impurities and makeup while maintaining your skin’s natural balance. Our cleansers are designed to leave your skin feeling clean and refreshed without any irritation.</p>
                     <p>At Beauty Hub, we are dedicated to ensuring that our products not only meet but exceed your expectations. Each item is carefully formulated to deliver tangible benefits, helping you achieve and maintain beautiful, healthy skin.</p>
                 </div>
-                <img src="aboutproduct.jpg" alt="Our Products">
+                <div class = "img-container">
+                    <img src="img/aboutproduct.jpg" alt="Our Products">
+                </div>
             </article>
 
             <article class = "section">
-                <img src="aboutmisson.jpg" alt="Our Mission">
+                <div class = "img-container">
+                    <img src="img/aboutmisson.jpg" alt="Our Mission">
+                </div>
                 <div class="text-content">
                     <h2>Our Mission</h2>
                     <p>Our mission at Beauty Hub is to empower individuals by providing high-quality beauty products that promote confidence and self-care. We believe that everyone deserves to feel beautiful and valued, and our products are designed to support this belief.</p>
@@ -113,9 +116,9 @@
             <aside id="meet-our-team">
                 <h2>Meet Our Team</h2>
                 <div class="row text-center">
-                    <div class="col-md-4">
+                    <div class="col-xl-4 col-lg-12">
                         <div class="card mb-4">
-                            <img src="newProfile_1.jpg" alt="Ilon Mask" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="img/newProfile_1.jpg" alt="Ilon Mask" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
                             <div class="card-body">
                                 <h3>Elon Mask</h3>
                                 <h5 class="card-title">Innovation and Technology Advisor</h5>
@@ -123,9 +126,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-xl-4 col-md-12">
                         <div class="card mb-4">
-                            <img src="newProfile_2.jpg" alt="Joanne Rowling" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="img/newProfile_2.jpg" alt="Joanne Rowling" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
                             <div class="card-body">
                                 <h3>Joanne Rowling</h3>
                                 <h5 class="card-title">Creative Director and Brand Storyteller</h5>
@@ -133,9 +136,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-xl-4 col-lg-12">
                         <div class="card mb-4">
-                            <img src="newProfile_3.jpg" alt="Mark Zuckerberg" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="img/newProfile_3.jpg" alt="Mark Zuckerberg" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;">
                             <div class="card-body">
                                 <h3>Mark Zuckerberg</h3>
                                 <h5 class="card-title">Chief Digital Strategy Officer</h5>
@@ -162,19 +165,106 @@
                     <p>Please enter your credentials to log in:</p>
                     <form id="loginForm">
                         <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="username">Username:</label>
-                            <input type="text" id="username" class="form-control" required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" id="username" class="form-control" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" id="password" class="form-control" required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="password" class="form-control" required>
+                            </div>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="rememberMe">
                             <label class="form-check-label" for="rememberMe">Remember Me</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </form>
+                    <div class="mt-3 text-center">
+                        <p class="text-center mt-3">Don't have an account? <a href="#" id="showSignUpModal">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up 🎉</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Create an account by filling out the form below:</p>
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signupUsername">Username:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" id="signupUsername" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                </div>
+                                <input type="tel" id="signupPhone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                </div>
+                                <input type="email" id="signupEmail" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="signupPassword" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupConfirmPassword">Confirm Password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="signupConfirmPassword" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    </form>
+                    <p class="text-center mt-3">Already have an account? <a href="#" id="showLoginModal">Log In</a></p>
                 </div>
             </div>
         </div>
@@ -185,7 +275,7 @@
         <p>&copy; @ainur_ali, @darina_abdukadyrova, @akerke_kassymbekova | All Rights Reserved</p>
     </footer>
 
-    <script src="about.js"></script>
+    <script src="js/about.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
