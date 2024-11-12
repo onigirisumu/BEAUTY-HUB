@@ -1,50 +1,36 @@
-async function getWeather() {
-    const apiKey = '087f9351949d4f85a1d91223241211';
-    const city = 'London'; 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=087f9351949d4f85a1d91223241211&units=metric`;
+// Example weather fetching code
+const apiKey = '087f9351949d4f85a1d91223241211'; // Use your actual API key
+const city = 'London'; // Set the city dynamically if necessary
 
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data); // Log the data for debugging
-
-        const weather = data.weather[0].main;
-        const temperature = data.main.temp;
-
-        document.getElementById("weather").innerHTML = `
-            The current weather in ${city} is ${weather} with a temperature of ${temperature}°C.
-        `;
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+  .then(response => response.json())
+  .then(data => {
+    const weatherDiv = document.getElementById('weather');
+    if (data.weather) {
+      const weatherContent = `
+        <h3>Weather in ${city}</h3>
+        <p>Temperature: ${data.main.temp}°C</p>
+        <p>Condition: ${data.weather[0].description}</p>
+        <p>Humidity: ${data.main.humidity}%</p>
+      `;
+      weatherDiv.innerHTML = weatherContent;
+    } else {
+      weatherDiv.innerHTML = '<p>Weather data not available.</p>';
     }
-}
+  })
+  .catch(error => {
+    console.error('Error fetching weather data:', error);
+    document.getElementById('weather').innerHTML = '<p>Error fetching weather data.</p>';
+  });
 
-window.onload = function() {
-    getWeather();
-};
-
-
-// Function to suggest beauty products based on the weather
-function suggestBeautyProducts(weather) {
-    // Define product suggestions based on weather conditions
-    const suggestions = {
-        clear: "Try our SPF products for sun protection.",
-        rain: "We recommend a hydrating facial mist.",
-        snow: "Stay moisturized with our rich winter creams.",
-        cloudy: "Our lightweight moisturizers are perfect for cloudy days."
-    };
-
-    // Provide a default suggestion if the weather doesn't match any specific condition
-    const suggestion = suggestions[weather.toLowerCase()] || "Check out our bestsellers!";
-    
-    // Display the product suggestion on the page
-    document.getElementById("product-suggestions").innerHTML = suggestion;
-}
-
-// Call the getWeather function when the page loads
-window.onload = getWeather;
-
+// Example of product suggestions (if applicable)
+const productSuggestionsDiv = document.getElementById('product-suggestions');
+// This should be dynamically populated with product data
+productSuggestionsDiv.innerHTML = `
+  <h3>Suggested Products</h3>
+  <p>Product 1</p>
+  <p>Product 2</p>
+`;
 
 
 
