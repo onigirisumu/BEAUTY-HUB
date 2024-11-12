@@ -257,7 +257,7 @@ nav {
 
 .filtered-products-container .card {
  flex: 0 0 30%; /* Cards take up 30% of the container's width */
-  max-width: 500px; /* Optional: Set a max-width to avoid cards stretching too much */
+  max-width: 600px; /* Optional: Set a max-width to avoid cards stretching too much */
   margin: 10px; /* Adds spacing between cards */
 }
 
