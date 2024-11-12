@@ -1,14 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply filters on page load if saved in localStorage
+    applyFilters();
+
     document.getElementById('filterButton').addEventListener('click', function() {
         const categoryFilter = document.getElementById('categoryFilter').value;
         const priceFilter = document.getElementById('priceFilter').value;
 
+        // Save filter settings to localStorage
+        localStorage.setItem('categoryFilter', categoryFilter);
+        localStorage.setItem('priceFilter', priceFilter);
+
+        applyFilters();
+    });
+
+    function applyFilters() {
+        const categoryFilter = document.getElementById('categoryFilter').value;
+        const priceFilter = document.getElementById('priceFilter').value;
         const productCards = document.querySelectorAll('.card');
+        const noResultsMessage = document.getElementById('noResultsMessage');
+        let visibleCards = 0;
 
         productCards.forEach(card => {
             const category = card.getAttribute('data-category');
             const price = parseInt(card.getAttribute('data-price'));
-
             let showCard = true;
 
             if (categoryFilter !== 'all' && category !== categoryFilter) {
@@ -22,9 +36,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
+            // Show or hide the card based on filter conditions
             card.style.display = showCard ? 'block' : 'none';
+            if (showCard) {
+                visibleCards++;
+            }
         });
-    });
+
+        // Show "No products match the filters" if no visible cards
+        if (visibleCards === 0) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+
+        // Adjust layout: Center align cards when there's less than 3 in a row
+        const rows = document.querySelectorAll('.row');
+        rows.forEach(row => {
+            const visibleCardsInRow = row.querySelectorAll('.card:not([style*="display: none"])').length;
+            if (visibleCardsInRow === 1) {
+                row.classList.add('justify-content-center');
+            } else if (visibleCardsInRow === 2) {
+                row.classList.add('justify-content-evenly');
+            } else {
+                row.classList.remove('justify-content-center', 'justify-content-evenly');
+            }
+        });
+    }
 });
 
 
