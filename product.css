@@ -242,6 +242,13 @@ nav {
     margin: 0 100px;
 }
 
+.products-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -293,6 +300,15 @@ nav {
 
 .product-image:hover {
     transform: scale(1.05);
+}
+.product-card {
+    flex: 0 1 calc(33.33% - 1rem); /* Adjusts width to fit three in a row */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.product-card.hidden {
+    display: none;
 }
 
 .card .btn {
