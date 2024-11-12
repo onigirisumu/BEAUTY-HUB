@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('filterButton').addEventListener('click', function() {
         saveFilters();
-        applyFilters();
+        filterProducts();  // Replace applyFilters with filterProducts
     });
 });
 
@@ -16,7 +16,7 @@ function initializeFilters() {
     if (savedCategoryFilter) document.getElementById('categoryFilter').value = savedCategoryFilter;
     if (savedPriceFilter) document.getElementById('priceFilter').value = savedPriceFilter;
 
-    applyFilters();
+    filterProducts();  // Replace applyFilters with filterProducts
 }
 
 function saveFilters() {
@@ -26,7 +26,7 @@ function saveFilters() {
     localStorage.setItem('priceFilter', priceFilter);
 }
 
-function applyFilters() {
+function filterProducts() {  // Replaces applyFilters
     const categoryFilter = document.getElementById('categoryFilter').value;
     const priceFilter = document.getElementById('priceFilter').value;
     const productCards = document.querySelectorAll('.card');
@@ -36,11 +36,13 @@ function applyFilters() {
     productCards.forEach(card => {
         const category = card.getAttribute('data-category');
         const price = parseInt(card.getAttribute('data-price'));
-        let showCard = (categoryFilter === 'all' || category === categoryFilter) &&
-                       (priceFilter === 'all' || withinPriceRange(price, priceFilter));
+        
+        // Adjust the condition as per your filtering logic
+        const matchesFilter = (categoryFilter === 'all' || category === categoryFilter) &&
+                              (priceFilter === 'all' || withinPriceRange(price, priceFilter));
 
-        card.style.display = showCard ? 'block' : 'none';
-        if (showCard) visibleCards++;
+        card.style.display = matchesFilter ? 'block' : 'none';
+        if (matchesFilter) visibleCards++;
     });
 
     noResultsMessage.style.display = visibleCards === 0 ? 'block' : 'none';
