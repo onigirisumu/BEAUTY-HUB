@@ -1,29 +1,3 @@
-// Example: Fetching products in the "makeup" category
-fetch('https://world.openbeautyfacts.org/api/v0/products.json?category=makeup')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    displayProducts(data.products); // Call a function to display products
-  })
-  .catch(error => console.error('Error fetching data:', error));
-
-function displayProducts(products) {
-  // Loop through the products and create HTML elements to display them
-  const productsContainer = document.getElementById('products-container');
-  products.forEach(product => {
-    const productElement = document.createElement('div');
-    productElement.classList.add('product-card');
-    productElement.innerHTML = `
-      <img src="${product.image_url}" alt="${product.product_name}" class="product-image">
-      <h3>${product.product_name}</h3>
-      <p>${product.ingredients_text}</p>
-      <p><strong>Brand:</strong> ${product.brand}</p>
-    `;
-    productsContainer.appendChild(productElement);
-  });
-}
-
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
