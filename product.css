@@ -242,6 +242,12 @@ nav {
     margin: 0 100px;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Default to left-aligned */
+}
+
 
 .card {
     background-color: #fff;
@@ -256,8 +262,22 @@ nav {
     justify-content: space-between;
     height: 480px;
     overflow: auto;
+    flex: 1 1 calc(33.333% - 30px); /* Default for 3 cards per row */
+}
+.justify-content-center {
+    justify-content: center !important;
 }
 
+.justify-content-evenly {
+    justify-content: space-evenly !important;
+}
+
+#noResultsMessage {
+    color: #ca5093;
+    font-size: 1.5rem;
+    margin: 20px;
+    font-weight: bold;
+}
 .product-title {
     font-size: 1.5rem;
     color: #250316;
