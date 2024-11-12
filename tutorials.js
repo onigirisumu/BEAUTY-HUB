@@ -73,54 +73,100 @@ checkbox.addEventListener('change', () => {
 });
 
 // User Authentication: Login and Logout
-const loginForm = document.getElementById('loginForm');
-const usernameInput = document.getElementById('username');
-const passwordInput = document.getElementById('password');
-const logoutButton = document.getElementById('logoutIcon');
-const loginIcon = document.getElementById('loginIcon');
-const rememberMeCheckbox = document.getElementById('rememberMe');
+document.addEventListener("DOMContentLoaded", function() {
+    const showLoginModal = document.getElementById("showLoginModal");
+    const showSignUpModal = document.getElementById("showSignUpModal");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const savedUsername = localStorage.getItem('username');
-    if (savedUsername) {
-        usernameInput.value = savedUsername;
-        rememberMeCheckbox.checked = true;
-        logoutButton.style.display = 'block';
-        loginIcon.style.display = 'none';
-    } else {
-        logoutButton.style.display = 'none';
-        loginIcon.style.display = 'block';
+    const signupModalElement = document.getElementById("signupModal");
+    const loginModalElement = document.getElementById("loginModal");
+
+    const signupModal = new bootstrap.Modal(signupModalElement, {
+        backdrop: 'static',
+        keyboard: true
+    });
+    const loginModal = new bootstrap.Modal(loginModalElement, {
+        backdrop: 'static',
+        keyboard: true
+    });
+
+    showLoginModal.addEventListener("click", function(event) {
+        event.preventDefault();
+        signupModal.hide();
+        loginModal.show();
+        removeBackdrop();
+    });
+
+    showSignUpModal.addEventListener("click", function(event) {
+        event.preventDefault();
+        loginModal.hide();
+        signupModal.show();
+        removeBackdrop();
+    });
+
+    const closeSignupModalButton = document.querySelector("#signupModal .close");
+    const closeLoginModalButton = document.querySelector("#loginModal .close");
+
+    closeSignupModalButton.addEventListener("click", function() {
+        closeBothModals();
+    });
+
+    closeLoginModalButton.addEventListener("click", function() {
+        closeBothModals();
+    });
+
+    function closeBothModals() {
+        signupModal.hide();
+        loginModal.hide();
+        removeBackdrop();
     }
-});
 
-loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const username = usernameInput.value.trim();
-    const password = passwordInput.value;
-
-    if (username === '' || password === '') {
-        alert('Please enter a username and password.');
-        return;
+    function removeBackdrop() {
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.remove();
+        }
     }
 
-    if (rememberMeCheckbox.checked) {
-        localStorage.setItem('username', username);
-    } else {
-        localStorage.removeItem('username');
-    }
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    loginForm.reset();
-    $('#loginModal').modal('hide');
-    logoutButton.style.display = 'block';
-    loginIcon.style.display = 'none';
+        const username = document.getElementById("signupUsername").value;
+        const email = document.getElementById("signupEmail").value;
+        const phone = document.getElementById("signupPhone").value;
+        const password = document.getElementById("signupPassword").value;
+
+        if (!username || !email || !phone || !password) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        const user = {
+            username: username,
+            email: email,
+            phone: phone,
+            password: password,
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+
+        window.location.href = "profile.html";
+    });
+
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+
+        if (storedUser && storedUser.email === email && storedUser.password === password) {
+            window.location.href = "profile.html";
+        } else {
+            alert("Incorrect email or password. Please try again.");
+        }
+    });
+
 });
-
-logoutButton.addEventListener('click', function() {
-    localStorage.removeItem('username');
-    logoutButton.style.display = 'none';
-    loginIcon.style.display = 'block';
-});
-
-
 
