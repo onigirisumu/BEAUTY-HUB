@@ -1,71 +1,55 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Apply filters on page load if saved in localStorage
-    applyFilters();
+    initializeFilters();
+    initializeThemeToggle();
+    initializeLogin();
 
     document.getElementById('filterButton').addEventListener('click', function() {
-        const categoryFilter = document.getElementById('categoryFilter').value;
-        const priceFilter = document.getElementById('priceFilter').value;
-
-        // Save filter settings to localStorage
-        localStorage.setItem('categoryFilter', categoryFilter);
-        localStorage.setItem('priceFilter', priceFilter);
-
+        saveFilters();
         applyFilters();
     });
-
-    function applyFilters() {
-        const categoryFilter = document.getElementById('categoryFilter').value;
-        const priceFilter = document.getElementById('priceFilter').value;
-        const productCards = document.querySelectorAll('.card');
-        const noResultsMessage = document.getElementById('noResultsMessage');
-        let visibleCards = 0;
-
-        productCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            const price = parseInt(card.getAttribute('data-price'));
-            let showCard = true;
-
-            if (categoryFilter !== 'all' && category !== categoryFilter) {
-                showCard = false;
-            }
-
-            if (priceFilter !== 'all') {
-                const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
-                if (price < minPrice || price > maxPrice) {
-                    showCard = false;
-                }
-            }
-
-            // Show or hide the card based on filter conditions
-            card.style.display = showCard ? 'block' : 'none';
-            if (showCard) {
-                visibleCards++;
-            }
-        });
-
-        // Show "No products match the filters" if no visible cards
-        if (visibleCards === 0) {
-            noResultsMessage.style.display = 'block';
-        } else {
-            noResultsMessage.style.display = 'none';
-        }
-
-        // Adjust layout: Center align cards when there's less than 3 in a row
-        const rows = document.querySelectorAll('.row');
-        rows.forEach(row => {
-            const visibleCardsInRow = row.querySelectorAll('.card:not([style*="display: none"])').length;
-            if (visibleCardsInRow === 1) {
-                row.classList.add('justify-content-center');
-            } else if (visibleCardsInRow === 2) {
-                row.classList.add('justify-content-evenly');
-            } else {
-                row.classList.remove('justify-content-center', 'justify-content-evenly');
-            }
-        });
-    }
 });
 
+function initializeFilters() {
+    const savedCategoryFilter = localStorage.getItem('categoryFilter');
+    const savedPriceFilter = localStorage.getItem('priceFilter');
 
+    if (savedCategoryFilter) document.getElementById('categoryFilter').value = savedCategoryFilter;
+    if (savedPriceFilter) document.getElementById('priceFilter').value = savedPriceFilter;
+
+    applyFilters();
+}
+
+function saveFilters() {
+    const categoryFilter = document.getElementById('categoryFilter').value;
+    const priceFilter = document.getElementById('priceFilter').value;
+    localStorage.setItem('categoryFilter', categoryFilter);
+    localStorage.setItem('priceFilter', priceFilter);
+}
+
+function applyFilters() {
+    const categoryFilter = document.getElementById('categoryFilter').value;
+    const priceFilter = document.getElementById('priceFilter').value;
+    const productCards = document.querySelectorAll('.card');
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    let visibleCards = 0;
+
+    productCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const price = parseInt(card.getAttribute('data-price'));
+        let showCard = (categoryFilter === 'all' || category === categoryFilter) &&
+                       (priceFilter === 'all' || withinPriceRange(price, priceFilter));
+
+        card.style.display = showCard ? 'block' : 'none';
+        if (showCard) visibleCards++;
+    });
+
+    noResultsMessage.style.display = visibleCards === 0 ? 'block' : 'none';
+}
+
+function withinPriceRange(price, priceFilter) {
+    const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
+    return price >= minPrice && price <= maxPrice;
+}
 
 //Assignment 6
 // 2. User Preferences - Light/Dark Mode.
