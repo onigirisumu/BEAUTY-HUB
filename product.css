@@ -225,6 +225,21 @@ nav {
     border-radius: 10px;
 }
 
+#weather {
+  font-size: 1.2rem;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+#product-suggestions {
+  font-size: 1rem;
+  margin-top: 20px;
+  color: #ff69b4; /* Pink color for beauty theme */
+}
+
+
 .section-heading {
     color: #ca5093;
     font-family: serif;
