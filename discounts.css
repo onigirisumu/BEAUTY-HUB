@@ -19,7 +19,7 @@ html, body {
 }
 
 body {
-    font-family: 'Hind', sans-serif;
+    font-family: Roboto, sans-serif;
     background: #fff;
     color: #4d5974;
     display: flex;
@@ -37,6 +37,7 @@ header {
 }
 
 
+/*Navigation bar*/
 nav {
     display: flex;
     padding: 2% 6%;
@@ -61,6 +62,42 @@ h1 a {
     color: #333;
     padding: 8px 12px;
     transition: color 0.3s ease;
+}
+
+.navbar-toggler{
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.navbar-toggler:hover{
+    background-color: #08080819;
+    border-color: black;
+    transition: border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+.navbar .navbar-nav .nav-item a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.navbar .navbar-nav .nav-item a:hover::after{
+    opacity: 1;
 }
 
 
@@ -147,6 +184,91 @@ h1 a {
 #loginModal .close:hover {
     color: #ff1493;
 }
+
+#signupModal {
+    font-family: 'Poppins', sans-serif;
+}
+
+#signupModal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#signupModal .modal-header {
+    background-color: #ff6f91; /* Match with login header */
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    padding: 15px;
+}
+
+#signupModal .modal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#signupModal .modal-body {
+    background-color: #fff;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+#signupModal .modal-body p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+#signupModal .form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+#signupModal .form-control:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+#signupModal .form-check-label {
+    color: #555;
+}
+
+#signupModal .btn {
+    background-color: #ff6f91; /* Match with login button color */
+    color: white;
+    border-radius: 6px;
+    padding: 12px 20px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+#signupModal .btn:hover {
+    background-color: #ff1493;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#signupModal .close {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#signupModal .close:hover {
+    color: #ff1493;
+}
+
 
 
 .carousel {
@@ -437,16 +559,17 @@ h1 a {
 }
 
 footer {
-    padding: 20px 0;
     background-color: #333;
     color: #fff;
     text-align: center;
-    font-size: 1rem;
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
 
 footer p {
     margin: 0;
 }
+
 
 @media (max-width: 700px) {
     .navbar-nav .nav-item .nav-link {
@@ -527,24 +650,355 @@ input:checked + .slider:before {
     font-size: 1.2rem;
 }
 
-/* Night theme */
+/* Night theme - navbar */
+body.night-theme .navbar {
+    background-color: #523233 !important;
+}
+
+body.night-theme .navbar .navbar-nav .nav-item .nav-link,
+body.night-theme h1 a{
+    color: #f8f8f8;
+}
+
+
+body.night-theme .navbar .navbar-nav .nav-item a {
+    color: #f8f8f8;
+}
+
+body.night-theme .navbar .navbar-nav .nav-item a::after {
+    background-color: #ffffff;
+}
+
+body.night-theme .navbar .navbar-nav .nav-item a:hover::after {
+    opacity: 1;
+}
+
+body.night-theme .navbar-toggler {
+    background-color: #d1d1d1;
+}
+
+body.night-theme .navbar .fa-user-circle-o,
+body.night-theme .navbar .fa-sign-out {
+    color: #d1d1d1;
+}
+
+/*Login - night theme*/
+body.night-theme #loginModal .modal-header {
+    background-color: #523233;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .modal-body p {
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .modal-body {
+    background-color: #2e2e2e;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .form-control {
+    background-color: #444;
+    border: 1px solid #666;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .form-control:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+body.night-theme #loginModal .btn {
+    background-color: #ff6f91;
+    color: white;
+}
+
+body.night-theme #loginModal .btn:hover {
+    background-color: #ff1493;
+}
+
+body.night-theme #loginModal .close {
+    background-color: #523233;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .close:hover {
+    background-color: #523233;
+    color: #ff1493;
+}
+
+
+/*Body - night theme*/
 body.night-theme {
-    background-color: #031f3b;
-    color: #ECF0F1;
+    background-color: #644041;
+    color: #fbffff;
 }
 
 body.night-theme p {
-    color: #BDC3C7;
+    color: #eddfdc;
 }
 
-body.night-theme .product-reel .product, body.night-theme .firsttext .container,  body.night-theme .discounts .card{
-    background-color: #07335f;
+body.night-theme .product-reel .product,
+body.night-theme .discounts .card{
+    background-color: #2e2e2e;
     color: #ECF0F1;
 }
 
 body.night-theme .discounts {
-    background-color: #031f3b;
+    background-color: #7d5b5b;
+}
+
+body.night-theme {
+    background-color: #644041;
+    color: #fbffff;
+}
+
+body.night-theme .shopcart1,
+body.night-theme .rate-experience {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.night-theme h1,
+body.night-theme .rate-experience h3{
+    color: #ff6f91;
+}
+
+body.night-theme #messageContainer{
+    color: #eddfdc;
+}
+
+body.night-theme h2 {
+    color: #ffffff;
+}
+
+body.night-theme label {
+    color: #dddddd;
+}
+
+body.night-theme input{
+    background-color: #333333;
+    border: 1px solid #555555;
+    color: #ffffff;
+}
+
+body.night-theme input:focus {
+    border-color: #ff6f91;
+}
+
+body.night-theme .error-message {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+}
+
+body.night-theme .shopcart1 button {
+    background-color: #ff6f91;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.night-theme .shopcart1 button:hover {
+    background-color: #ff1493;
+}
+
+body.night-theme button:disabled {
+    background-color: #555555;
+}
+
+body.night-theme .success-message {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+body.night-theme footer{
+    background-color:#2c1819;
+}
+
+
+@media (max-width: 749px) {
+    .navbar .navbar-brand{
+        font-size: 3rem;
+    }
+
+    .navbar .navbar-nav .nav-item a::after {
+        content: none;
+        display: none;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 2rem;
+    }
+
+    .carousel-inner {
+        overflow: hidden;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+    
+    .carousel-item {
+        height: 100%;
+    }
+    
+    .carousel {
+        height: 100%;
+    }
+
+    .product-reel h2 {
+        font-size: 3rem;
+    }
+
+    .product {
+        margin: 30px;
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .product-info p {
+        font-size: 2rem;
+    }
+
+    .product-info .btn {
+        font-size: 1.7rem;
+    }
+
+    .firsttext h2 {
+        font-size: 3rem;
+    }
+
+    .firsttext p {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    #moreContent {
+        font-size: 2rem;
+    }
+
+    #readMoreButton {
+        font-size: 1.7rem;
+        padding: 10px 20px;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+    
+    .card-body {
+        padding: 1rem;
+
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-text {
+        font-size: 1.3rem;
+    }
+    
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .shopcart1 label{
+        font-size: 1.5rem;
+    }
+
+    .shopcart1 button{
+        font-size: 1.3rem;
+    }
+    
+    footer{
+        font-size: 1.4rem;
+    }
 }
 
 
 
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .product-reel h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-info p {
+        font-size: 1rem;
+    }
+}
+
+/* Сетки для продуктов */
+@media (max-width: 767px) {
+    .col-sm-6 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-3 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-3 {
+        width: 25%;
+    }
+}
+
+
+body.night-theme .modal-content { background-color: #2c2f38;
+
+    color: #e5e5e5;}
+    body.night-theme .modal-header {
+        background-color: #1f2329;    border-bottom: 1px solid #444;
+    }
+    body.night-theme .modal-title {    color: #e5e5e5;
+    }
+    body.night-theme .close {    color: #e5e5e5;
+    }
+    body.night-theme .modal-body {    background-color: #2c2f38;
+    }
+    body.night-theme .form-control {
+        background-color: #444950;    color: #e5e5e5;
+        border: 1px solid #555;}
+    body.night-theme .form-control:focus {
+        background-color: #555;    border-color: #2a9d8f;
+        color: #e5e5e5;}
+    body.night-theme .input-group-text {
+        background-color: #555;    color: #e5e5e5;
+    }
+    body.night-theme .btn-primary {
+        background-color: #2a9d8f;    border-color: #2a9d8f;
+    }
+    body.night-theme .btn-primary:hover {
+        background-color: #1f7f6e;    border-color: #1f7f6e;
+    }
+    body.night-theme .form-check-input {    background-color: #555;
+        border-color: #555;}
+    body.night-theme .form-check-label {
+        color: #e5e5e5;}
+    body.night-theme .modal-footer {
+        background-color: #1f2329;}
+    body.night-theme #showSignUpModal {
+        color: #2a9d8f;}
+    body.night-theme #showSignUpModal:hover {
+        text-decoration: underline;}
+    
