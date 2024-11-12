@@ -1,33 +1,28 @@
-// Function to fetch weather data and provide beauty product recommendations based on weather
 async function getWeather() {
-    const apiKey = '087f9351949d4f85a1d91223241211'; // Your API key
-    const city = 'London'; // Change to your preferred city
- const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=087f9351949d4f85a1d91223241211&units=metric`;
-
+    const apiKey = '087f9351949d4f85a1d91223241211';
+    const city = 'London'; 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     try {
-        // Fetch weather data from OpenWeather API
         const response = await fetch(url);
         const data = await response.json();
+        console.log(data); // Log the data for debugging
 
-        // Log the data to the console for debugging purposes
-        console.log(data);
-
-        // Extract the weather description and temperature
         const weather = data.weather[0].main;
         const temperature = data.main.temp;
 
-        // Display the weather info on the page
         document.getElementById("weather").innerHTML = `
             The current weather in ${city} is ${weather} with a temperature of ${temperature}°C.
         `;
-
-        // Suggest beauty products based on weather
-        suggestBeautyProducts(weather);
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
 }
+
+window.onload = function() {
+    getWeather();
+};
+
 
 // Function to suggest beauty products based on the weather
 function suggestBeautyProducts(weather) {
