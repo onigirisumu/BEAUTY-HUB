@@ -187,19 +187,18 @@ logoutButton.addEventListener('click', function() {
 });
 
 async function getWeather() {
-      const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-      const city = 'London'; // You can make this dynamic with user input
+      const apiKey = '087f9351949d4f85a1d91223241211';
+      const city = 'London'; 
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
       try {
         const response = await fetch(url);
         const data = await response.json();
 
-        // Get weather conditions
+      
         const weather = data.weather[0].main;
         const temperature = data.main.temp;
 
-        // Display weather information
         document.getElementById("weather").innerHTML = `
           The current weather in ${city} is ${weather} with a temperature of ${temperature}°C.
         `;
