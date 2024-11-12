@@ -277,7 +277,7 @@ nav {
     height: 480px;
     overflow: auto;
     flex: 1 1 calc(33.333% - 30px); /* Default for 3 cards per row */
-    max-width: 500px; /* Optional: Set a max-width to avoid cards stretching too much */
+    width: 480px; /* Optional: Set a max-width to avoid cards stretching too much */
 
 }
 .justify-content-center {
