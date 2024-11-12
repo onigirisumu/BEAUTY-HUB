@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  rel="stylesheet">
-    <link rel="stylesheet" href="tutorials.css">
+    <link rel="stylesheet" href="css/tutorials.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Tutorials - New Videos</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top">
             <h1 class="navbar-brand"><a href="index.html">BEAUTY HUB</a></h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="product.html">PRODUCTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tutorials.html">TUTORIALS</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="tutorials.html">TUTORIALS</a></li>
                     <li class="nav-item"><a class="nav-link" href="discounts.html">DISCOUNTS</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
@@ -32,7 +33,7 @@
                         <a class="nav-link" id="logoutIcon" style="display: none;" onclick="logout()">
                             <i class="fa fa-sign-out"></i> LOGOUT
                         </a>
-                    </li>        
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -40,7 +41,7 @@
 
     <main>
         <section class="content">
-            <img src="tutorial.jpg" alt="Content Image">
+            <img src="img/tutorial.jpg" alt="Content Image">
             <h1>Welcome to Our Beauty Tutorials!
             <button id="HelloButton" style="font-size: 40px; background: none; border: none; cursor: pointer;">🪄</button></h1>
             <audio id="notificationSound" src="sounds/not.mp3" preload="auto"></audio>
@@ -159,7 +160,7 @@
                     <div class="carousel-item active">
                         <div class="d-flex justify-content-around">
                             <div class="product">
-                                <img src="foundation.jpg" alt="Foundation Georgio Armani" class="d-block w-100">
+                                <img src="img/foundation.jpg" alt="Foundation Georgio Armani" class="d-block w-100">
                                 <div class="product-info">
                                     <p>Foundation Georgio Armani</p>
                                     <p>34,990 tg</p>
@@ -167,7 +168,7 @@
                                 </div>
                             </div>
                             <div class="product">
-                                <img src="charlottecontour.jpg" alt="Charlotte Tilbury Contour" class="d-block w-100">
+                                <img src="img/charlottecontour.jpg" alt="Charlotte Tilbury Contour" class="d-block w-100">
                                 <div class="product-info">
                                     <p>Charlotte Tilbury Contour</p>
                                     <p>20,200 tg</p>
@@ -175,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="product">
-                                <img src="dalbamist.jpg" alt="D'Alba Mist" class="d-block w-100">
+                                <img src="img/dalbamist.jpg" alt="D'Alba Mist" class="d-block w-100">
                                 <div class="product-info">
                                     <p>D'Alba Mist</p>
                                     <p>18,500 tg</p>
@@ -187,7 +188,7 @@
                     <div class="carousel-item">
                         <div class="d-flex justify-content-around">
                             <div class="product">
-                                <img src="charlotteblush.jpg" alt="Charlotte Tilbury Blush" class="d-block w-100">
+                                <img src="img/charlotteblush.jpg" alt="Charlotte Tilbury Blush" class="d-block w-100">
                                 <div class="product-info">
                                     <p>Charlotte Tilbury Blush</p>
                                     <p>20,200 tg</p>
@@ -195,7 +196,7 @@
                                 </div>
                             </div>
                             <div class="product">
-                                <img src="charlottepudra.jpg" alt="Charlotte Tilbury Pink Powder Blush" class="d-block w-100">
+                                <img src="img/charlottepudra.jpg" alt="Charlotte Tilbury Pink Powder Blush" class="d-block w-100">
                                 <div class="product-info">
                                     <p>Charlotte Tilbury Pink Powder Blush</p>
                                     <p>24,990 tg</p>
@@ -281,19 +282,106 @@
                     <p>Please enter your credentials to log in:</p>
                     <form id="loginForm">
                         <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="username">Username:</label>
-                            <input type="text" id="username" class="form-control" required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" id="username" class="form-control" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" id="password" class="form-control" required>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="password" class="form-control" required>
+                            </div>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="rememberMe">
                             <label class="form-check-label" for="rememberMe">Remember Me</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </form>
+                    <div class="mt-3 text-center">
+                        <p class="text-center mt-3">Don't have an account? <a href="#" id="showSignUpModal">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up 🎉</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Create an account by filling out the form below:</p>
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signupUsername">Username:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" id="signupUsername" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                </div>
+                                <input type="tel" id="signupPhone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                </div>
+                                <input type="email" id="signupEmail" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="signupPassword" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupConfirmPassword">Confirm Password:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" id="signupConfirmPassword" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    </form>
+                    <p class="text-center mt-3">Already have an account? <a href="#" id="showLoginModal">Log In</a></p>
                 </div>
             </div>
         </div>
@@ -303,7 +391,7 @@
         <p>&copy; @ainur_ali, @darina_abdukadyrova, @akerke_kassymbekova | All Rights Reserved</p>
     </footer>
 
-    <script src="tutorials.js"></script>
+    <script src="js/tutorials.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
