@@ -1,36 +1,27 @@
-// Example weather fetching code
-const apiKey = '087f9351949d4f85a1d91223241211'; // Use your actual API key
-const city = 'London'; // Set the city dynamically if necessary
-
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+// Example: Fetching products in the "makeup" category
+fetch('https://world.openbeautyfacts.org/api/v0/products.json?category=makeup')
   .then(response => response.json())
   .then(data => {
-    const weatherDiv = document.getElementById('weather');
-    if (data.weather) {
-      const weatherContent = `
-        <h3>Weather in ${city}</h3>
-        <p>Temperature: ${data.main.temp}°C</p>
-        <p>Condition: ${data.weather[0].description}</p>
-        <p>Humidity: ${data.main.humidity}%</p>
-      `;
-      weatherDiv.innerHTML = weatherContent;
-    } else {
-      weatherDiv.innerHTML = '<p>Weather data not available.</p>';
-    }
+    console.log(data);
+    displayProducts(data.products); // Call a function to display products
   })
-  .catch(error => {
-    console.error('Error fetching weather data:', error);
-    document.getElementById('weather').innerHTML = '<p>Error fetching weather data.</p>';
-  });
+  .catch(error => console.error('Error fetching data:', error));
 
-// Example of product suggestions (if applicable)
-const productSuggestionsDiv = document.getElementById('product-suggestions');
-// This should be dynamically populated with product data
-productSuggestionsDiv.innerHTML = `
-  <h3>Suggested Products</h3>
-  <p>Product 1</p>
-  <p>Product 2</p>
-`;
+function displayProducts(products) {
+  // Loop through the products and create HTML elements to display them
+  const productsContainer = document.getElementById('products-container');
+  products.forEach(product => {
+    const productElement = document.createElement('div');
+    productElement.classList.add('product-card');
+    productElement.innerHTML = `
+      <img src="${product.image_url}" alt="${product.product_name}" class="product-image">
+      <h3>${product.product_name}</h3>
+      <p>${product.ingredients_text}</p>
+      <p><strong>Brand:</strong> ${product.brand}</p>
+    `;
+    productsContainer.appendChild(productElement);
+  });
+}
 
 
 
