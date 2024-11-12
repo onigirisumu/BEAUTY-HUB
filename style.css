@@ -1,5 +1,3 @@
-
-
 *{
     margin: 0;
     padding: 0;
@@ -18,11 +16,13 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+
 }
 
-@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 body {
-    font-family: 'Hind', sans-serif;
+    font-family: Roboto, sans-serif;
     background: #fff;
     color: #4d5974;
     display: flex;
@@ -44,11 +44,7 @@ body.night-mode {
     color: #ecf0f1;
 }
 
-/* Стили для иконок */
-#themeToggle {
-    cursor: pointer;
-}
-
+/*Navigation bar*/
 nav {
     display: flex;
     padding: 2% 6%;
@@ -73,6 +69,42 @@ h1 a {
     color: #333;
     padding: 8px 12px;
     transition: color 0.3s ease;
+}
+
+.navbar-toggler{
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.navbar-toggler:hover{
+    background-color: #08080819;
+    border-color: black;
+    transition: border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+.navbar .navbar-nav .nav-item a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.navbar .navbar-nav .nav-item a:hover::after{
+    opacity: 1;
 }
 
 
@@ -160,7 +192,91 @@ h1 a {
     color: #ff1493;
 }
 
+#signupModal {
+    font-family: 'Poppins', sans-serif;
+}
 
+#signupModal .modal-content {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#signupModal .modal-header {
+    background-color: #ff6f91; /* Match with login header */
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    padding: 15px;
+}
+
+#signupModal .modal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#signupModal .modal-body {
+    background-color: #fff;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 12px 12px;
+}
+
+#signupModal .modal-body p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+#signupModal .form-control {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+#signupModal .form-control:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+#signupModal .form-check-label {
+    color: #555;
+}
+
+#signupModal .btn {
+    background-color: #ff6f91; /* Match with login button color */
+    color: white;
+    border-radius: 6px;
+    padding: 12px 20px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+#signupModal .btn:hover {
+    background-color: #ff1493;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#signupModal .close {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#signupModal .close:hover {
+    color: #ff1493;
+}
+
+/*Carousel - hero images*/
 .carousel {
     margin-top: 50px;
 }
@@ -188,6 +304,7 @@ h1 a {
     font-size: 1rem;
 }
 
+/*Welcome section*/
 .welcome {
     margin: 80px 0;
 }
@@ -261,32 +378,166 @@ input:checked + .slider:before {
     font-size: 1.2rem;
 }
 
-/* Night theme */
+/* Night theme - navbar */
+body.night-theme .navbar {
+    background-color: #523233 !important;
+}
+
+body.night-theme .navbar .navbar-nav .nav-item .nav-link,
+body.night-theme h1 a{
+    color: #f8f8f8;
+}
+
+
+body.night-theme .navbar .navbar-nav .nav-item a {
+    color: #f8f8f8;
+}
+
+body.night-theme .navbar .navbar-nav .nav-item a::after {
+    background-color: #ffffff;
+}
+
+body.night-theme .navbar .navbar-nav .nav-item a:hover::after {
+    opacity: 1;
+}
+
+body.night-theme .navbar-toggler {
+    background-color: #d1d1d1;
+}
+
+body.night-theme .navbar .fa-user-circle-o,
+body.night-theme .navbar .fa-sign-out {
+    color: #d1d1d1;
+}
+
+/*Login - night theme*/
+body.night-theme #loginModal .modal-header {
+    background-color: #523233;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .modal-body p {
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .modal-body{
+    background-color: #2e2e2e;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .form-control {
+    background-color: #444;
+    border: 1px solid #666;
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .form-control:focus {
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+body.night-theme #loginModal .btn {
+    background-color: #ff6f91;
+    color: white;
+}
+
+body.night-theme #loginModal .btn:hover {
+    background-color: #ff1493;
+}
+
+body.night-theme #loginModal .close {
+    color: #f8f8f8;
+}
+
+body.night-theme #loginModal .close:hover {
+    color: #ff1493;
+}
+
+/*Body - night theme*/
 body.night-theme {
-    background-color: #031f3b;
-    color: #ECF0F1;
+    background-color: #644041;
+    color: #fbffff;
 }
 
 body.night-theme p {
-    color: #BDC3C7;
+    color: #eddfdc;
 }
 
-body.night-theme .newProducts-section .card, body.night-theme .tutorial-section .tutorial-video,  body.night-theme .customize-section{
-    background-color: #07335f;
-    color: #ECF0F1;
+
+body.night-theme .newProducts-section .card,
+body.night-theme .tutorial-section .tutorial-video{
+    background-color:  #2e2e2e;
+    color: #eddfdc;
+}
+
+body.night-theme .customize-section{
+    color: #eddfdc;
+    background-color: #2e2e2e;
 }
 
 body.night-theme .customize-section h2{
-    color: #ECF0F1;
+    color: #fbffff;
 }
 
 body.night-theme #join-us{
-    background-color: #08667be6;
+    background-color: #2e3844;
+    color: #fbffff;
+}
+
+/* night-mode for FAQ */
+body.night-theme .accordion button {
+    color:  #fbffff;
+}
+
+body.night-theme .accordion button:hover,
+body.night-theme .accordion button:focus {
+    color: #fd96a9;
+}
+
+body.night-theme .accordion button[aria-expanded='true'] {
+    color: #fd96a9;
+    border-bottom: 1px solid #fd96a9;
+    transition: color 0.3s ease-in-out;
+}
+
+body.night-theme .accordion button .icon {
+    border: 1px solid #fbffff;
+}
+
+body.night-theme .accordion button .icon::before,
+body.night-theme .accordion button .icon::after {
+    background: #fbffff;
+}
+
+body.night-theme .accordion button:hover .icon,
+body.night-theme .accordion button:focus .icon{
+    border-color: #fd96a9;
+    transition: border-color 0.3s ease-in-out;
+}
+
+body.night-theme .accordion button:hover .icon::before,
+body.night-theme .accordion button:hover .icon::after {
+    background-color: #fd96a9;
+    transition: background-color 0.3s ease-in-out;
+}
+
+body.night-theme .accordion button[aria-expanded='true'] .icon {
+    border-color: #fd96a9;
+}
+
+body.night-theme .accordion button[aria-expanded='true'] .icon::before,
+body.night-theme .accordion button[aria-expanded='true'] .icon::after {
+    background-color: #fd96a9;
+}
+
+body.night-theme .accordion .accordion-content {
+    color: #eddfdc;
 }
 
 
-
-
+body.night-theme footer{
+    background-color:#2c1819;
+}
 
 
 /* Section Styling */
@@ -306,7 +557,7 @@ body.night-theme #join-us{
 /* Card Styling */
 .card {
     width: 100%;
-    height: 700px; /* Allow the height to adjust dynamically */
+    height: 700px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -333,13 +584,13 @@ body.night-theme #join-us{
 .card-text {
     font-size: 1rem;
     text-align: justify;
+    max-height: 7.5em;
     transition: max-height 0.4s ease-in-out;
-    max-height: 7.5em; /* Default truncated height */
     overflow: hidden;
 }
 
 .card.expanded .card-text {
-    max-height: 10em; /* Expand height on read more */
+    max-height: 10em;
 }
 
 /* Rating Stars Styling */
@@ -368,7 +619,7 @@ body.night-theme #join-us{
 }
 
 /* Button Styling */
-button {
+.newProducts-section button {
     background-color: #81beff;
     color: white;
     border: none;
@@ -380,11 +631,11 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
+.newProducts-section button:hover {
     background-color: #0056b3;
 }
 
-button:focus {
+.newProducts-section button:focus {
     outline: none;
 }
 
@@ -393,10 +644,7 @@ button:focus {
     display: none;
 }
 
-
-
-
-
+/*Tutorial section*/
 .tutorial-section {
     margin-bottom: 80px;
 }
@@ -455,6 +703,7 @@ button:focus {
     margin: 0 auto;
 }
 
+/*Customize section*/
 .customize-section {
     text-align: center;
     margin: 40px 100px;
@@ -492,7 +741,7 @@ button:focus {
     transform: scale(1.05);
 }
 
-
+/*FAQ's section*/
 .faq-section {
     margin: auto;
     padding: 4rem;
@@ -509,7 +758,7 @@ button:focus {
 }
 
 .accordion .accordion-item button[aria-expanded='true'] {
-    border-bottom: 1px solid #03b5d2;
+    border-bottom: 1px solid #fd96a9;
 }
 
 .accordion button {
@@ -529,14 +778,15 @@ button:focus {
 .accordion button:hover,
 .accordion button:focus {
     cursor: pointer;
-    color: #03b5d2;
+    color: #fd96a9;
+    transition: color 0.3s ease-in-out;
 }
 
 .accordion button:hover::after,
 .accordion button:focus::after {
     cursor: pointer;
-    color: #03b5d2;
-    border: 1px solid #03b5d2;
+    color: #fd96a9;
+    border: 1px solid #fd96a9;
 }
 
 .accordion button .accordion-title {
@@ -576,7 +826,7 @@ button:focus {
 }
 
 .accordion button[aria-expanded='true'] {
-    color: #03b5d2;
+    color: #fd96a9;
 }
 
 .accordion button[aria-expanded='true'] .icon::after {
@@ -585,8 +835,8 @@ button:focus {
 
 .accordion button[aria-expanded='true'] + .accordion-content {
     opacity: 1;
-    max-height: 9em;
-    transition: all 200ms linear;
+    max-height: 15em;
+    transition: all 0.3s linear;
     will-change: opacity, max-height;
 }
 
@@ -602,96 +852,6 @@ button:focus {
     font-size: 1rem;
     font-weight: 300;
     margin: 2em 0;
-}
-
-@media (max-width: 768px) {
-    .faq-section {
-        padding: 2rem;
-        width: 100%;
-    }
-
-    .faq-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-
-    .accordion button {
-        padding: 0.8em 0;
-        font-size: 1rem;
-    }
-
-    .accordion .accordion-content p {
-        font-size: 0.9rem;
-        margin: 1em 0;
-    }
-
-    .accordion button .icon {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .accordion button .icon {
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        width: 24px;
-        height: 24px;
-        transform: translateY(-50%);
-    }
-    
-    .accordion button .icon::before {
-        content: '';
-        position: absolute;
-        background: currentColor;
-        width: 2px;
-        height: 12px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .accordion button .icon::after {
-        content: '';
-        position: absolute;
-        background: currentColor;
-        width: 12px;
-        height: 2px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .accordion button[aria-expanded='true'] .icon::before {
-        display: none;
-    }
-    
-    .accordion button[aria-expanded='true'] .icon::after {
-        width: 12px;
-        height: 2px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-}
-
-@media (max-width: 480px) {
-    .faq-section {
-        padding: 1rem;
-    }
-
-    .faq-section h2 {
-        font-size: 1.25rem;
-    }
-
-    .accordion button {
-        padding: 0.5em 0;
-        font-size: 0.9rem;
-    }
-
-    .accordion .accordion-content p {
-        font-size: 0.85rem;
-    }
 }
 
 #join-us {
@@ -717,25 +877,65 @@ button:focus {
 }
 
 footer {
-    padding: 20px 0;
     background-color: #333;
     color: #fff;
     text-align: center;
-    font-size: 1rem;
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
 
 footer p {
     margin: 0;
 }
 
-@media (max-width: 700px) {
-    .navbar-nav .nav-item .nav-link {
-        font-size: 1rem;
+@media (max-width: 749px) {
+    .navbar .navbar-brand{
+        font-size: 3rem;
     }
 
-    .carousel-inner img {
-        height: 400px;
+    .navbar-nav .nav-item .nav-link {
+        font-size: 2rem;
     }
+
+    .navbar .navbar-nav .nav-item a::after {
+        display: none;
+    }
+
+
+    .carousel-inner img {
+        height: 800px;
+    }
+
+    .carousel-inner .carousel-item .carousel-caption h5{
+        font-size: 2.3rem;
+    }
+
+    .carousel-inner .carousel-item .carousel-caption p{
+        font-size: 1.5rem;
+    }
+
+
+    .theme-switch {
+        width: 80px;
+        height: 40px;
+    }
+
+    .slider:before {
+        height: 30px;
+        width: 30px;
+        left: 5px;
+        bottom: 5px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(40px);
+    }
+
+    .toggle-text {
+        margin-top: 10px;
+        font-size: 2rem;
+    }
+
 
     .welcome, .tutorial-section{
         margin : 20px;
@@ -743,40 +943,440 @@ footer p {
     }
 
     .welcome h2, .newProducts-section h2, .tutorial-section h2 {
-        font-size: 1.5rem;
+        font-size: 3rem;
     }
 
     .welcome p, .newProducts-section p, .tutorial-section p{
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
-    .card{
-        margin: 10px 60px;
-        width: 80%;
-    }
 
-    .card-title {
-        font-size: 1.2rem;
+    .card {
+        width: 90%;
+        margin: 10px auto;
+        height: auto
     }
 
     .card-text {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        max-height: none;
+        overflow: visible;
+        transition: max-height 0.3s ease-in-out;
     }
 
-    .tutorial-video h3 {
-        font-size: 1.4rem;
+    .card-body {
+        font-size: 0.9rem;
+        max-height: 700px;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
     }
+
+    .card-title{
+        font-size: 2rem;
+        line-height: 1.6;
+    }
+
+    .card .rating .star{
+        font-size: 30px;
+    }
+
+    .card button{
+        font-size: 1.5rem;
+        width: auto;
+        height: auto;
+    }
+    
+    #more1 {
+        display: none;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .card.expanded .card-text {
+        max-height: none;
+        overflow: visible;
+    }
+
+
+
+
+    .tutorial-video h3 {
+        font-size: 2rem;
+    }
+
+
+    .customize-section{
+        margin: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .customize-section h2{
+        font-size: 2.5rem;
+    }
+
+    .customize-section p{
+        font-size: 2rem;
+    }
+
+    .customize-section #changeColorBtn{
+        font-size: 1.7rem;
+    }
+
+
+    .faq-section {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .faq-section h2 {
+        font-size: 2.3rem;
+        margin: 50px 0 20px 0;
+    }
+
+    .accordion button {
+        padding: 0.8em 0;
+        font-size: 2rem;
+    }
+
+    .accordion-title{
+        font-size: 1.7rem;
+    }
+
+    .accordion .accordion-content p {
+        font-size: 1.7rem;
+        margin: 1em 0;
+    }
+
+    .accordion button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        transform: translateY(-100%);
+    }
+
+    .accordion button .icon::before {
+        content: '';
+        position: absolute;
+        background: currentColor;
+        width: 2px;
+        height: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .accordion button .icon::after {
+        content: '';
+        position: absolute;
+        background: currentColor;
+        width: 12px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .accordion button[aria-expanded='true'] .icon::before {
+        display: none;
+    }
+
+    .accordion button[aria-expanded='true'] .icon::after {
+        width: 12px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
 
     #join-us p{
         margin: 10px 0;
         padding: 0px;
+        font-size: 2rem;
     }
 
     #join-us h2 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     #join-us p, #join-us .btn {
-        font-size: 1rem;
+        font-size: 2rem;
+    }
+
+    footer{
+        font-size: 1.4rem;
     }
 }
+
+
+@media (min-width: 750px) and (max-width: 1300px) {
+    .navbar .navbar-brand{
+        font-size: 2rem;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 1.5rem;
+    }
+
+    .navbar .navbar-nav .nav-item a::after {
+        display: none;
+    }
+
+
+    .carousel-inner img {
+        height: 550px;
+    }
+
+    .carousel-inner .carousel-item .carousel-caption h5{
+        font-size: 1.7rem;
+    }
+
+    .carousel-inner .carousel-item .carousel-caption p{
+        font-size: 1.5rem;
+    }
+
+
+    .theme-switch {
+        width: 80px;
+        height: 40px;
+    }
+
+    .slider:before {
+        height: 30px;
+        width: 30px;
+        left: 5px;
+        bottom: 5px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(40px);
+    }
+
+    .toggle-text {
+        margin-top: 10px;
+        font-size: 1.7rem;
+    }
+
+
+    .welcome, .tutorial-section{
+        margin : 20px;
+        padding : 10px;
+    }
+
+    .welcome h2, .newProducts-section h2, .tutorial-section h2 {
+        font-size: 2rem;
+    }
+
+    .welcome p, .newProducts-section p, .tutorial-section p{
+        font-size: 1.5rem;
+    }
+
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+        height: auto
+    }
+
+    .card-text {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        max-height: none;
+        overflow: visible;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .card-body {
+        font-size: 0.9rem;
+        max-height: 700px;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .card-title{
+        font-size: 2rem;
+        line-height: 1.6;
+    }
+
+    .card .rating .star{
+        font-size: 30px;
+    }
+
+    .card button{
+        font-size: 1.5rem;
+        width: auto;
+        height: auto;
+    }
+    
+    #more1 {
+        display: none;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .card.expanded .card-text {
+        max-height: none;
+        overflow: visible;
+    }
+
+
+
+    .tutorial-video h3 {
+        font-size: 2rem;
+    }
+
+
+    .customize-section{
+        margin: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .customize-section h2{
+        font-size: 2.5rem;
+    }
+
+    .customize-section p{
+        font-size: 2rem;
+    }
+
+    .customize-section #changeColorBtn{
+        font-size: 1.7rem;
+    }
+
+
+    .faq-section {
+        padding: 2rem;
+        width: 90%;
+        margin: auto;
+    }
+
+    .faq-section h2 {
+        font-size: 2.2rem;
+        margin: 40px 0 20px 0;
+    }
+
+    .accordion button {
+        padding: 0.8em 0;
+        font-size: 1.8rem;
+    }
+
+    .accordion-title {
+        font-size: 1.6rem;
+    }
+
+    .accordion .accordion-content p {
+        font-size: 1.6rem;
+        margin: 1.5em 0;
+    }
+
+    .accordion button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        transform: translateY(-50%);
+    }
+
+    .accordion button .icon::before {
+        content: '';
+        position: absolute;
+        background: currentColor;
+        width: 2px;
+        height: 12px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .accordion button .icon::after {
+        content: '';
+        position: absolute;
+        background: currentColor;
+        width: 12px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .accordion button[aria-expanded='true'] .icon::before {
+        display: none;
+    }
+
+    .accordion button[aria-expanded='true'] .icon::after {
+        width: 12px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+
+    #join-us h2 {
+        margin: 5px 0;
+        font-size: 2.3rem;
+    }
+
+    #join-us p, #join-us .btn {
+        font-size: 1.8rem;
+        margin: 10px 0;
+    }
+
+    footer {
+        font-size: 1.2rem;
+    }
+}
+
+
+body.night-theme .modal-content { background-color: #2c2f38;
+
+    color: #e5e5e5;}
+    body.night-theme .modal-header {
+        background-color: #1f2329;    border-bottom: 1px solid #444;
+    }
+    body.night-theme .modal-title {    color: #e5e5e5;
+    }
+    body.night-theme .close {    color: #e5e5e5;
+    }
+    body.night-theme .modal-body {    background-color: #2c2f38;
+    }
+    body.night-theme .form-control {
+        background-color: #444950;    color: #e5e5e5;
+        border: 1px solid #555;}
+    body.night-theme .form-control:focus {
+        background-color: #555;    border-color: #2a9d8f;
+        color: #e5e5e5;}
+    body.night-theme .input-group-text {
+        background-color: #555;    color: #e5e5e5;
+    }
+    body.night-theme .btn-primary {
+        background-color: #2a9d8f;    border-color: #2a9d8f;
+    }
+    body.night-theme .btn-primary:hover {
+        background-color: #1f7f6e;    border-color: #1f7f6e;
+    }
+    body.night-theme .form-check-input {    background-color: #555;
+        border-color: #555;}
+    body.night-theme .form-check-label {
+        color: #e5e5e5;}
+    body.night-theme .modal-footer {
+        background-color: #1f2329;}
+    body.night-theme #showSignUpModal {
+        color: #2a9d8f;}
+    body.night-theme #showSignUpModal:hover {
+        text-decoration: underline;}
+    
