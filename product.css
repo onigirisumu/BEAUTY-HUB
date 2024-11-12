@@ -347,6 +347,8 @@ footer p {
 @media (min-width: 768px) {
     .product-item {
         width: calc(33.333% - 40px);
+    .filtered-products-container {
+    justify-content: center; /* Ensure cards are centered on smaller screens */
     }
 }
 
