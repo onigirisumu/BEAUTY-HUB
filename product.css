@@ -252,17 +252,15 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .filtered-products-container .card {
+ flex: 0 0 30%; /* Cards take up 30% of the container's width */
+  max-width: 300px; /* Optional: Set a max-width to avoid cards stretching too much */
   margin: 10px; /* Adds spacing between cards */
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 
 .card {
@@ -347,9 +345,16 @@ footer p {
 @media (min-width: 768px) {
     .product-item {
         width: calc(33.333% - 40px);
-    .filtered-products-container {
-    justify-content: center; /* Ensure cards are centered on smaller screens */
     }
+    .filtered-products-container {
+    justify-content: center;
+  }
+
+  /* Make cards take up more width on smaller screens */
+  .filtered-products-container .card {
+    flex: 0 0 45%;
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 576px) {
